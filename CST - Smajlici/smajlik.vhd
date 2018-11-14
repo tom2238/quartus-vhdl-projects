@@ -1,0 +1,160 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+use ieee.std_logic_arith.all;
+
+entity smajlik is
+	port
+	(
+		clk		: in std_logic;
+		but0	: in std_logic;
+		but1	: in std_logic;
+		but2	: in std_logic;
+		but3	: in std_logic;
+		rad0 	: out std_logic;
+		rad1 	: out std_logic;
+		rad2	: out std_logic;
+		rad3 	: out std_logic;
+		rad4	: out std_logic;
+		rad5	: out std_logic;
+		rad6	: out std_logic;
+		rad7	: out std_logic;
+		slp0 	: out std_logic;
+		slp1 	: out std_logic;
+		slp2	: out std_logic;
+		slp3 	: out std_logic;
+		slp4	: out std_logic;
+		slp5	: out std_logic;
+		slp6	: out std_logic;
+		slp7	: out std_logic
+	);
+end smajlik;
+
+architecture Behavioral of smajlik is
+-- signals
+signal sloupce : std_logic_vector(7 downto 0);
+signal radky : std_logic_vector(7 downto 0);
+signal radky2 : std_logic_vector(7 downto 0);
+-- registr
+signal regs : std_logic_vector(7 downto 0) := "00000001"; 
+signal registr : std_logic_vector(15 downto 0);
+-- pomocne signaly
+signal rd0	: std_logic_vector(7 downto 0);
+signal rd1	: std_logic_vector(7 downto 0);
+signal rd2	: std_logic_vector(7 downto 0);
+signal rd3	: std_logic_vector(7 downto 0);
+signal rd4	: std_logic_vector(7 downto 0);
+signal rd5	: std_logic_vector(7 downto 0);
+signal rd6	: std_logic_vector(7 downto 0);
+signal rd7	: std_logic_vector(7 downto 0);
+begin
+
+-- registr segmentovek
+process (registr(15))
+	begin
+	if (rising_edge(registr(15)))  then
+		regs <= regs(6 downto 0) & regs(7);
+	end if;
+end process;
+
+-- citac reg
+process (clk)
+	begin
+	if (rising_edge(clk)) then
+		registr <= registr + 1;
+	end if;
+end process;
+
+
+process (but0, but1, but2, but3) 
+begin
+  case but0 is
+	-- smajlik :-)
+      when '0' => 
+    rd0 <= "00000000";
+	rd1 <= "01100110";
+	rd2 <= "01100110";
+	rd3 <= "00000000";
+	rd4 <= "10011001";
+	rd5 <= "01000010";
+	rd6 <= "00111100";
+	rd7 <= "00000000";
+		WHEN OTHERS => 
+  end case;
+  case but1 is
+		-- smajlik :*
+      when '0' => 
+    rd0 <= "00000000";
+	rd1 <= "01100110";
+	rd2 <= "01100110";
+	rd3 <= "01000100";
+	rd4 <= "00101000";
+	rd5 <= "11010110";
+	rd6 <= "00101000";
+	rd7 <= "01000100";
+	WHEN OTHERS => 
+  end case;
+  case but2 is
+		-- smajlik <3
+      when '0' => 
+    rd0 <= "00001000";
+	rd1 <= "00010100";
+	rd2 <= "00100010";
+	rd3 <= "01000001";
+	rd4 <= "00000000";
+	rd5 <= "01001001";
+	rd6 <= "00101010";
+	rd7 <= "00010100";
+	WHEN OTHERS => 
+  end case;  
+  case but3 is
+		-- smajlik :-p
+      when '0' => 
+    rd0 <= "00000000";
+	rd1 <= "01100110";
+	rd2 <= "01100110";
+	rd3 <= "00000000";
+	rd4 <= "00011000";
+	rd5 <= "11111111";
+	rd6 <= "10010000";
+	rd7 <= "01100000";
+	WHEN OTHERS => 
+  end case; 
+end process;
+
+-- registr na piny
+sloupce <= regs;
+radky <= not (radky2);
+--
+with regs select
+	radky2 <=  rd0 when "10000000",
+			rd1 when "01000000",
+			rd2 when "00100000",
+			rd3 when "00010000",
+			rd4 when "00001000",
+			rd5 when "00000100",
+			rd6 when "00000010",
+			rd7 when "00000001",
+			"00000000" when others;
+
+-- prechod z vektoru na nor. log. radky
+rad0 <= radky(0);
+rad1 <= radky(1);
+rad2 <= radky(2);
+rad3 <= radky(3);
+rad4 <= radky(4);
+rad5 <= radky(5);
+rad6 <= radky(6);
+rad7 <= radky(7);
+-- prechod z vektoru na nor. log. sloupce
+slp0 <= sloupce(0);
+slp1 <= sloupce(1);
+slp2 <= sloupce(2);
+slp3 <= sloupce(3);
+slp4 <= sloupce(4);
+slp5 <= sloupce(5);
+slp6 <= sloupce(6);
+slp7 <= sloupce(7);
+
+end Behavioral;		
+	

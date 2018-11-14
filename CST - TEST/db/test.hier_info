@@ -1,0 +1,26 @@
+|test
+pin_name <= 7490:inst.QD
+pin_name11 => 7490:inst.SET9A
+pin_name13 => 7490:inst.CLRA
+pin_name12 => 7490:inst.SET9B
+pin_name16 => 7490:inst.CLKB
+pin_name15 => 7490:inst.CLKA
+pin_name14 => 7490:inst.CLRB
+pin_name8 <= 7490:inst.QC
+pin_name9 <= 7490:inst.QB
+pin_name10 <= 7490:inst.QA
+
+
+|test|7490:inst
+QA <= 7.DB_MAX_OUTPUT_PORT_TYPE
+CLRA => 9.IN0
+CLRB => 9.IN1
+CLKA => 32.IN0
+SET9A => 8.IN0
+SET9B => 8.IN1
+QB <= 11.DB_MAX_OUTPUT_PORT_TYPE
+CLKB => 33.IN0
+QC <= 14.DB_MAX_OUTPUT_PORT_TYPE
+QD <= 19.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,54 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+use ieee.std_logic_arith.all;
+
+entity citac is
+	port
+	(
+		clk 	: in std_logic;
+	    vystup0	: out std_logic;
+	    vystup1	: out std_logic;
+	    vystup2	: out std_logic;
+	    vystup3	: out std_logic
+	);
+end citac;
+
+architecture Behavioral of citac is
+-- signals
+signal cislo0 : std_logic_vector(21 downto 0);
+signal cislo1 : std_logic_vector(22 downto 0);
+signal cislo2 : std_logic_vector(23 downto 0);
+signal cislo3 : std_logic_vector(24 downto 0);
+begin
+	process (clk)
+		begin
+			if (rising_edge(clk)) then
+			cislo0 <= cislo0 + 1;
+			end if;
+		end process;
+			process (clk)
+		begin
+			if (rising_edge(clk)) then
+			cislo1 <= cislo1 + 1;
+			end if;
+		end process;
+			process (clk)
+		begin
+			if (rising_edge(clk)) then
+			cislo2 <= cislo2 + 1;
+			end if;
+		end process;
+			process (clk)
+		begin
+			if (rising_edge(clk)) then
+			cislo3 <= cislo3 + 1;
+			end if;
+		end process;
+	vystup0 <= cislo0(21);		
+	vystup1 <= cislo1(22);
+	vystup2 <= cislo2(23);
+	vystup3 <= cislo3(24);		
+
+end Behavioral;		
+	

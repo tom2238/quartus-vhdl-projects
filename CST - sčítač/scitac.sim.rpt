@@ -1,0 +1,427 @@
+Simulator report for scitac
+Wed Apr 22 18:20:58 2015
+Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 1.0 us       ;
+; Simulation Netlist Size     ; 105 nodes    ;
+; Simulation Coverage         ;       1.48 % ;
+; Total Number of Transitions ; 13           ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone II   ;
+; Device                      ; EP2C8T144C8  ;
++-----------------------------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                      ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Option                                                                                     ; Setting    ; Default Value ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Simulation mode                                                                            ; Timing     ; Timing        ;
+; Start time                                                                                 ; 0 ns       ; 0 ns          ;
+; Simulation results format                                                                  ; CVWF       ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On         ; On            ;
+; Check outputs                                                                              ; Off        ; Off           ;
+; Report simulation coverage                                                                 ; On         ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On         ; On            ;
+; Display missing 1-value coverage report                                                    ; On         ; On            ;
+; Display missing 0-value coverage report                                                    ; On         ; On            ;
+; Detect setup and hold time violations                                                      ; Off        ; Off           ;
+; Detect glitches                                                                            ; Off        ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off        ; Off           ;
+; Generate Signal Activity File                                                              ; Off        ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off        ; Off           ;
+; Group bus channels in simulation results                                                   ; Off        ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On         ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off        ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off        ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto       ; Auto          ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;       1.48 % ;
+; Total nodes checked                                 ; 105          ;
+; Total output ports checked                          ; 135          ;
+; Total output ports with complete 1/0-value coverage ; 2            ;
+; Total output ports with no 1/0-value coverage       ; 131          ;
+; Total output ports with no 1-value coverage         ; 133          ;
+; Total output ports with no 0-value coverage         ; 131          ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++--------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                  ;
++------------------+------------------------+------------------+
+; Node Name        ; Output Port Name       ; Output Port Type ;
++------------------+------------------------+------------------+
+; |scitac|impulz~2 ; |scitac|impulz~2       ; combout          ;
+; |scitac|pricist  ; |scitac|pricist~corein ; combout          ;
++------------------+------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++--------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                       ;
++------------------------------+------------------------------+------------------+
+; Node Name                    ; Output Port Name             ; Output Port Type ;
++------------------------------+------------------------------+------------------+
+; |scitac|Add0~0               ; |scitac|Add0~0               ; combout          ;
+; |scitac|Add0~0               ; |scitac|Add0~1               ; cout             ;
+; |scitac|Add0~2               ; |scitac|Add0~2               ; combout          ;
+; |scitac|Add0~2               ; |scitac|Add0~3               ; cout             ;
+; |scitac|Add0~4               ; |scitac|Add0~4               ; combout          ;
+; |scitac|Add0~4               ; |scitac|Add0~5               ; cout             ;
+; |scitac|Add0~6               ; |scitac|Add0~6               ; combout          ;
+; |scitac|Add0~6               ; |scitac|Add0~7               ; cout             ;
+; |scitac|Add0~8               ; |scitac|Add0~8               ; combout          ;
+; |scitac|Add0~8               ; |scitac|Add0~9               ; cout             ;
+; |scitac|Add0~10              ; |scitac|Add0~10              ; combout          ;
+; |scitac|Add0~10              ; |scitac|Add0~11              ; cout             ;
+; |scitac|Add0~12              ; |scitac|Add0~12              ; combout          ;
+; |scitac|Add0~12              ; |scitac|Add0~13              ; cout             ;
+; |scitac|Add0~14              ; |scitac|Add0~14              ; combout          ;
+; |scitac|Add0~14              ; |scitac|Add0~15              ; cout             ;
+; |scitac|Add0~16              ; |scitac|Add0~16              ; combout          ;
+; |scitac|Add0~16              ; |scitac|Add0~17              ; cout             ;
+; |scitac|Add0~18              ; |scitac|Add0~18              ; combout          ;
+; |scitac|Add0~18              ; |scitac|Add0~19              ; cout             ;
+; |scitac|Add0~20              ; |scitac|Add0~20              ; combout          ;
+; |scitac|Add0~20              ; |scitac|Add0~21              ; cout             ;
+; |scitac|Add0~22              ; |scitac|Add0~22              ; combout          ;
+; |scitac|Add0~22              ; |scitac|Add0~23              ; cout             ;
+; |scitac|Add0~24              ; |scitac|Add0~24              ; combout          ;
+; |scitac|Add0~24              ; |scitac|Add0~25              ; cout             ;
+; |scitac|Add0~26              ; |scitac|Add0~26              ; combout          ;
+; |scitac|Add0~26              ; |scitac|Add0~27              ; cout             ;
+; |scitac|Add0~28              ; |scitac|Add0~28              ; combout          ;
+; |scitac|Add0~28              ; |scitac|Add0~29              ; cout             ;
+; |scitac|Add0~30              ; |scitac|Add0~30              ; combout          ;
+; |scitac|Add0~30              ; |scitac|Add0~31              ; cout             ;
+; |scitac|Add0~32              ; |scitac|Add0~32              ; combout          ;
+; |scitac|Add0~32              ; |scitac|Add0~33              ; cout             ;
+; |scitac|Add0~34              ; |scitac|Add0~34              ; combout          ;
+; |scitac|Add0~34              ; |scitac|Add0~35              ; cout             ;
+; |scitac|Add0~36              ; |scitac|Add0~36              ; combout          ;
+; |scitac|Add0~36              ; |scitac|Add0~37              ; cout             ;
+; |scitac|Add0~38              ; |scitac|Add0~38              ; combout          ;
+; |scitac|Add0~38              ; |scitac|Add0~39              ; cout             ;
+; |scitac|Add0~40              ; |scitac|Add0~40              ; combout          ;
+; |scitac|Add0~40              ; |scitac|Add0~41              ; cout             ;
+; |scitac|Add0~42              ; |scitac|Add0~42              ; combout          ;
+; |scitac|Add0~42              ; |scitac|Add0~43              ; cout             ;
+; |scitac|Add0~44              ; |scitac|Add0~44              ; combout          ;
+; |scitac|Add0~44              ; |scitac|Add0~45              ; cout             ;
+; |scitac|Add0~46              ; |scitac|Add0~46              ; combout          ;
+; |scitac|Add0~46              ; |scitac|Add0~47              ; cout             ;
+; |scitac|Add0~48              ; |scitac|Add0~48              ; combout          ;
+; |scitac|Add0~48              ; |scitac|Add0~49              ; cout             ;
+; |scitac|Add0~50              ; |scitac|Add0~50              ; combout          ;
+; |scitac|Add0~50              ; |scitac|Add0~51              ; cout             ;
+; |scitac|Add0~52              ; |scitac|Add0~52              ; combout          ;
+; |scitac|Add0~52              ; |scitac|Add0~53              ; cout             ;
+; |scitac|Add0~54              ; |scitac|Add0~54              ; combout          ;
+; |scitac|Add0~54              ; |scitac|Add0~55              ; cout             ;
+; |scitac|Add0~56              ; |scitac|Add0~56              ; combout          ;
+; |scitac|Add0~56              ; |scitac|Add0~57              ; cout             ;
+; |scitac|Add0~58              ; |scitac|Add0~58              ; combout          ;
+; |scitac|Add0~58              ; |scitac|Add0~59              ; cout             ;
+; |scitac|Add0~60              ; |scitac|Add0~60              ; combout          ;
+; |scitac|Equal0~0             ; |scitac|Equal0~0             ; combout          ;
+; |scitac|Equal0~1             ; |scitac|Equal0~1             ; combout          ;
+; |scitac|Equal0~2             ; |scitac|Equal0~2             ; combout          ;
+; |scitac|Equal0~3             ; |scitac|Equal0~3             ; combout          ;
+; |scitac|Equal0~4             ; |scitac|Equal0~4             ; combout          ;
+; |scitac|Equal0~5             ; |scitac|Equal0~5             ; combout          ;
+; |scitac|Equal0~6             ; |scitac|Equal0~6             ; combout          ;
+; |scitac|Equal0~7             ; |scitac|Equal0~7             ; combout          ;
+; |scitac|Equal0~8             ; |scitac|Equal0~8             ; combout          ;
+; |scitac|Equal1~0             ; |scitac|Equal1~0             ; combout          ;
+; |scitac|Equal1~1             ; |scitac|Equal1~1             ; combout          ;
+; |scitac|WideNor0~0           ; |scitac|WideNor0~0           ; combout          ;
+; |scitac|Equal0~9             ; |scitac|Equal0~9             ; combout          ;
+; |scitac|WideNor0~1           ; |scitac|WideNor0~1           ; combout          ;
+; |scitac|WideNor0~2           ; |scitac|WideNor0~2           ; combout          ;
+; |scitac|WideNor0~3           ; |scitac|WideNor0~3           ; combout          ;
+; |scitac|WideOr2~0            ; |scitac|WideOr2~0            ; combout          ;
+; |scitac|WideOr5              ; |scitac|WideOr5              ; combout          ;
+; |scitac|WideOr4~0            ; |scitac|WideOr4~0            ; combout          ;
+; |scitac|WideOr4              ; |scitac|WideOr4              ; combout          ;
+; |scitac|Equal5~0             ; |scitac|Equal5~0             ; combout          ;
+; |scitac|WideOr2              ; |scitac|WideOr2              ; combout          ;
+; |scitac|Equal3~0             ; |scitac|Equal3~0             ; combout          ;
+; |scitac|segment2~0           ; |scitac|segment2~0           ; combout          ;
+; |scitac|WideOr1~0            ; |scitac|WideOr1~0            ; combout          ;
+; |scitac|WideOr1              ; |scitac|WideOr1              ; combout          ;
+; |scitac|WideNor0~4           ; |scitac|WideNor0~4           ; combout          ;
+; |scitac|WideOr0              ; |scitac|WideOr0              ; combout          ;
+; |scitac|velikost[5]~0        ; |scitac|velikost[5]~0        ; combout          ;
+; |scitac|velikost[0]~1        ; |scitac|velikost[0]~1        ; combout          ;
+; |scitac|velikost[5]          ; |scitac|velikost[5]          ; combout          ;
+; |scitac|velikost[4]          ; |scitac|velikost[4]          ; combout          ;
+; |scitac|velikost[7]          ; |scitac|velikost[7]          ; combout          ;
+; |scitac|velikost[6]          ; |scitac|velikost[6]          ; combout          ;
+; |scitac|velikost[8]          ; |scitac|velikost[8]          ; combout          ;
+; |scitac|velikost[9]          ; |scitac|velikost[9]          ; combout          ;
+; |scitac|velikost[10]         ; |scitac|velikost[10]         ; combout          ;
+; |scitac|velikost[11]         ; |scitac|velikost[11]         ; combout          ;
+; |scitac|velikost[12]         ; |scitac|velikost[12]         ; combout          ;
+; |scitac|velikost[13]         ; |scitac|velikost[13]         ; combout          ;
+; |scitac|velikost[14]         ; |scitac|velikost[14]         ; combout          ;
+; |scitac|velikost[15]         ; |scitac|velikost[15]         ; combout          ;
+; |scitac|velikost[16]         ; |scitac|velikost[16]         ; combout          ;
+; |scitac|velikost[17]         ; |scitac|velikost[17]         ; combout          ;
+; |scitac|velikost[18]         ; |scitac|velikost[18]         ; combout          ;
+; |scitac|velikost[19]         ; |scitac|velikost[19]         ; combout          ;
+; |scitac|velikost[20]         ; |scitac|velikost[20]         ; combout          ;
+; |scitac|velikost[21]         ; |scitac|velikost[21]         ; combout          ;
+; |scitac|velikost[22]         ; |scitac|velikost[22]         ; combout          ;
+; |scitac|velikost[23]         ; |scitac|velikost[23]         ; combout          ;
+; |scitac|velikost[24]         ; |scitac|velikost[24]         ; combout          ;
+; |scitac|velikost[25]         ; |scitac|velikost[25]         ; combout          ;
+; |scitac|velikost[26]         ; |scitac|velikost[26]         ; combout          ;
+; |scitac|velikost[27]         ; |scitac|velikost[27]         ; combout          ;
+; |scitac|velikost[28]         ; |scitac|velikost[28]         ; combout          ;
+; |scitac|velikost[29]         ; |scitac|velikost[29]         ; combout          ;
+; |scitac|velikost[30]         ; |scitac|velikost[30]         ; combout          ;
+; |scitac|velikost[31]         ; |scitac|velikost[31]         ; combout          ;
+; |scitac|velikost[3]          ; |scitac|velikost[3]          ; combout          ;
+; |scitac|velikost[2]          ; |scitac|velikost[2]          ; combout          ;
+; |scitac|velikost[1]          ; |scitac|velikost[1]          ; combout          ;
+; |scitac|segment[0]           ; |scitac|segment[0]           ; padio            ;
+; |scitac|segment[1]           ; |scitac|segment[1]           ; padio            ;
+; |scitac|segment[2]           ; |scitac|segment[2]           ; padio            ;
+; |scitac|segment[3]           ; |scitac|segment[3]           ; padio            ;
+; |scitac|segment[4]           ; |scitac|segment[4]           ; padio            ;
+; |scitac|segment[5]           ; |scitac|segment[5]           ; padio            ;
+; |scitac|segment[6]           ; |scitac|segment[6]           ; padio            ;
+; |scitac|segment[7]           ; |scitac|segment[7]           ; padio            ;
+; |scitac|cislo                ; |scitac|cislo                ; padio            ;
+; |scitac|reset                ; |scitac|reset~corein         ; combout          ;
+; |scitac|velikost[5]~0clkctrl ; |scitac|velikost[5]~0clkctrl ; outclk           ;
++------------------------------+------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++------------------------------------------------------------------+
+; Missing 0-Value Coverage                                         ;
++-----------------------+-----------------------+------------------+
+; Node Name             ; Output Port Name      ; Output Port Type ;
++-----------------------+-----------------------+------------------+
+; |scitac|Add0~0        ; |scitac|Add0~0        ; combout          ;
+; |scitac|Add0~0        ; |scitac|Add0~1        ; cout             ;
+; |scitac|Add0~2        ; |scitac|Add0~2        ; combout          ;
+; |scitac|Add0~2        ; |scitac|Add0~3        ; cout             ;
+; |scitac|Add0~4        ; |scitac|Add0~4        ; combout          ;
+; |scitac|Add0~4        ; |scitac|Add0~5        ; cout             ;
+; |scitac|Add0~6        ; |scitac|Add0~6        ; combout          ;
+; |scitac|Add0~6        ; |scitac|Add0~7        ; cout             ;
+; |scitac|Add0~8        ; |scitac|Add0~8        ; combout          ;
+; |scitac|Add0~8        ; |scitac|Add0~9        ; cout             ;
+; |scitac|Add0~10       ; |scitac|Add0~10       ; combout          ;
+; |scitac|Add0~10       ; |scitac|Add0~11       ; cout             ;
+; |scitac|Add0~12       ; |scitac|Add0~12       ; combout          ;
+; |scitac|Add0~12       ; |scitac|Add0~13       ; cout             ;
+; |scitac|Add0~14       ; |scitac|Add0~14       ; combout          ;
+; |scitac|Add0~14       ; |scitac|Add0~15       ; cout             ;
+; |scitac|Add0~16       ; |scitac|Add0~16       ; combout          ;
+; |scitac|Add0~16       ; |scitac|Add0~17       ; cout             ;
+; |scitac|Add0~18       ; |scitac|Add0~18       ; combout          ;
+; |scitac|Add0~18       ; |scitac|Add0~19       ; cout             ;
+; |scitac|Add0~20       ; |scitac|Add0~20       ; combout          ;
+; |scitac|Add0~20       ; |scitac|Add0~21       ; cout             ;
+; |scitac|Add0~22       ; |scitac|Add0~22       ; combout          ;
+; |scitac|Add0~22       ; |scitac|Add0~23       ; cout             ;
+; |scitac|Add0~24       ; |scitac|Add0~24       ; combout          ;
+; |scitac|Add0~24       ; |scitac|Add0~25       ; cout             ;
+; |scitac|Add0~26       ; |scitac|Add0~26       ; combout          ;
+; |scitac|Add0~26       ; |scitac|Add0~27       ; cout             ;
+; |scitac|Add0~28       ; |scitac|Add0~28       ; combout          ;
+; |scitac|Add0~28       ; |scitac|Add0~29       ; cout             ;
+; |scitac|Add0~30       ; |scitac|Add0~30       ; combout          ;
+; |scitac|Add0~30       ; |scitac|Add0~31       ; cout             ;
+; |scitac|Add0~32       ; |scitac|Add0~32       ; combout          ;
+; |scitac|Add0~32       ; |scitac|Add0~33       ; cout             ;
+; |scitac|Add0~34       ; |scitac|Add0~34       ; combout          ;
+; |scitac|Add0~34       ; |scitac|Add0~35       ; cout             ;
+; |scitac|Add0~36       ; |scitac|Add0~36       ; combout          ;
+; |scitac|Add0~36       ; |scitac|Add0~37       ; cout             ;
+; |scitac|Add0~38       ; |scitac|Add0~38       ; combout          ;
+; |scitac|Add0~38       ; |scitac|Add0~39       ; cout             ;
+; |scitac|Add0~40       ; |scitac|Add0~40       ; combout          ;
+; |scitac|Add0~40       ; |scitac|Add0~41       ; cout             ;
+; |scitac|Add0~42       ; |scitac|Add0~42       ; combout          ;
+; |scitac|Add0~42       ; |scitac|Add0~43       ; cout             ;
+; |scitac|Add0~44       ; |scitac|Add0~44       ; combout          ;
+; |scitac|Add0~44       ; |scitac|Add0~45       ; cout             ;
+; |scitac|Add0~46       ; |scitac|Add0~46       ; combout          ;
+; |scitac|Add0~46       ; |scitac|Add0~47       ; cout             ;
+; |scitac|Add0~48       ; |scitac|Add0~48       ; combout          ;
+; |scitac|Add0~48       ; |scitac|Add0~49       ; cout             ;
+; |scitac|Add0~50       ; |scitac|Add0~50       ; combout          ;
+; |scitac|Add0~50       ; |scitac|Add0~51       ; cout             ;
+; |scitac|Add0~52       ; |scitac|Add0~52       ; combout          ;
+; |scitac|Add0~52       ; |scitac|Add0~53       ; cout             ;
+; |scitac|Add0~54       ; |scitac|Add0~54       ; combout          ;
+; |scitac|Add0~54       ; |scitac|Add0~55       ; cout             ;
+; |scitac|Add0~56       ; |scitac|Add0~56       ; combout          ;
+; |scitac|Add0~56       ; |scitac|Add0~57       ; cout             ;
+; |scitac|Add0~58       ; |scitac|Add0~58       ; combout          ;
+; |scitac|Add0~58       ; |scitac|Add0~59       ; cout             ;
+; |scitac|Add0~60       ; |scitac|Add0~60       ; combout          ;
+; |scitac|Equal0~0      ; |scitac|Equal0~0      ; combout          ;
+; |scitac|Equal0~1      ; |scitac|Equal0~1      ; combout          ;
+; |scitac|Equal0~2      ; |scitac|Equal0~2      ; combout          ;
+; |scitac|Equal0~3      ; |scitac|Equal0~3      ; combout          ;
+; |scitac|Equal0~4      ; |scitac|Equal0~4      ; combout          ;
+; |scitac|Equal0~5      ; |scitac|Equal0~5      ; combout          ;
+; |scitac|Equal0~6      ; |scitac|Equal0~6      ; combout          ;
+; |scitac|Equal0~7      ; |scitac|Equal0~7      ; combout          ;
+; |scitac|Equal0~8      ; |scitac|Equal0~8      ; combout          ;
+; |scitac|Equal1~0      ; |scitac|Equal1~0      ; combout          ;
+; |scitac|Equal1~1      ; |scitac|Equal1~1      ; combout          ;
+; |scitac|WideNor0~0    ; |scitac|WideNor0~0    ; combout          ;
+; |scitac|Equal0~9      ; |scitac|Equal0~9      ; combout          ;
+; |scitac|WideNor0~1    ; |scitac|WideNor0~1    ; combout          ;
+; |scitac|WideNor0~2    ; |scitac|WideNor0~2    ; combout          ;
+; |scitac|WideNor0~3    ; |scitac|WideNor0~3    ; combout          ;
+; |scitac|WideOr2~0     ; |scitac|WideOr2~0     ; combout          ;
+; |scitac|WideOr5       ; |scitac|WideOr5       ; combout          ;
+; |scitac|WideOr4~0     ; |scitac|WideOr4~0     ; combout          ;
+; |scitac|WideOr4       ; |scitac|WideOr4       ; combout          ;
+; |scitac|Equal5~0      ; |scitac|Equal5~0      ; combout          ;
+; |scitac|WideOr2       ; |scitac|WideOr2       ; combout          ;
+; |scitac|Equal3~0      ; |scitac|Equal3~0      ; combout          ;
+; |scitac|segment2~0    ; |scitac|segment2~0    ; combout          ;
+; |scitac|WideOr1~0     ; |scitac|WideOr1~0     ; combout          ;
+; |scitac|WideOr1       ; |scitac|WideOr1       ; combout          ;
+; |scitac|WideNor0~4    ; |scitac|WideNor0~4    ; combout          ;
+; |scitac|WideOr0       ; |scitac|WideOr0       ; combout          ;
+; |scitac|velikost[0]~1 ; |scitac|velikost[0]~1 ; combout          ;
+; |scitac|velikost[5]   ; |scitac|velikost[5]   ; combout          ;
+; |scitac|velikost[4]   ; |scitac|velikost[4]   ; combout          ;
+; |scitac|velikost[7]   ; |scitac|velikost[7]   ; combout          ;
+; |scitac|velikost[6]   ; |scitac|velikost[6]   ; combout          ;
+; |scitac|velikost[8]   ; |scitac|velikost[8]   ; combout          ;
+; |scitac|velikost[9]   ; |scitac|velikost[9]   ; combout          ;
+; |scitac|velikost[10]  ; |scitac|velikost[10]  ; combout          ;
+; |scitac|velikost[11]  ; |scitac|velikost[11]  ; combout          ;
+; |scitac|velikost[12]  ; |scitac|velikost[12]  ; combout          ;
+; |scitac|velikost[13]  ; |scitac|velikost[13]  ; combout          ;
+; |scitac|velikost[14]  ; |scitac|velikost[14]  ; combout          ;
+; |scitac|velikost[15]  ; |scitac|velikost[15]  ; combout          ;
+; |scitac|velikost[16]  ; |scitac|velikost[16]  ; combout          ;
+; |scitac|velikost[17]  ; |scitac|velikost[17]  ; combout          ;
+; |scitac|velikost[18]  ; |scitac|velikost[18]  ; combout          ;
+; |scitac|velikost[19]  ; |scitac|velikost[19]  ; combout          ;
+; |scitac|velikost[20]  ; |scitac|velikost[20]  ; combout          ;
+; |scitac|velikost[21]  ; |scitac|velikost[21]  ; combout          ;
+; |scitac|velikost[22]  ; |scitac|velikost[22]  ; combout          ;
+; |scitac|velikost[23]  ; |scitac|velikost[23]  ; combout          ;
+; |scitac|velikost[24]  ; |scitac|velikost[24]  ; combout          ;
+; |scitac|velikost[25]  ; |scitac|velikost[25]  ; combout          ;
+; |scitac|velikost[26]  ; |scitac|velikost[26]  ; combout          ;
+; |scitac|velikost[27]  ; |scitac|velikost[27]  ; combout          ;
+; |scitac|velikost[28]  ; |scitac|velikost[28]  ; combout          ;
+; |scitac|velikost[29]  ; |scitac|velikost[29]  ; combout          ;
+; |scitac|velikost[30]  ; |scitac|velikost[30]  ; combout          ;
+; |scitac|velikost[31]  ; |scitac|velikost[31]  ; combout          ;
+; |scitac|velikost[3]   ; |scitac|velikost[3]   ; combout          ;
+; |scitac|velikost[2]   ; |scitac|velikost[2]   ; combout          ;
+; |scitac|velikost[1]   ; |scitac|velikost[1]   ; combout          ;
+; |scitac|segment[0]    ; |scitac|segment[0]    ; padio            ;
+; |scitac|segment[1]    ; |scitac|segment[1]    ; padio            ;
+; |scitac|segment[2]    ; |scitac|segment[2]    ; padio            ;
+; |scitac|segment[3]    ; |scitac|segment[3]    ; padio            ;
+; |scitac|segment[4]    ; |scitac|segment[4]    ; padio            ;
+; |scitac|segment[5]    ; |scitac|segment[5]    ; padio            ;
+; |scitac|segment[6]    ; |scitac|segment[6]    ; padio            ;
+; |scitac|segment[7]    ; |scitac|segment[7]    ; padio            ;
+; |scitac|cislo         ; |scitac|cislo         ; padio            ;
+; |scitac|reset         ; |scitac|reset~corein  ; combout          ;
++-----------------------+-----------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+    Info: Processing started: Wed Apr 22 18:20:54 2015
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off scitac -c scitac
+Info: Using vector source file "Z:/CST - sèítaè/scitac.vwf"
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is       1.48 %
+Info: Number of transitions in simulation is 13
+Info: Quartus II Simulator was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 114 megabytes
+    Info: Processing ended: Wed Apr 22 18:20:58 2015
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:01
+
+

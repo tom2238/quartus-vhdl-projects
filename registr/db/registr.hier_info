@@ -1,0 +1,35 @@
+|registr
+clk => cislo[0].CLK
+clk => cislo[1].CLK
+clk => cislo[2].CLK
+clk => cislo[3].CLK
+clk => cislo[4].CLK
+clk => cislo[5].CLK
+clk => cislo[6].CLK
+clk => cislo[7].CLK
+clk => cislo[8].CLK
+clk => cislo[9].CLK
+clk => cislo[10].CLK
+clk => cislo[11].CLK
+clk => cislo[12].CLK
+clk => cislo[13].CLK
+clk => cislo[14].CLK
+clk => cislo[15].CLK
+led[0] <= reg[0].DB_MAX_OUTPUT_PORT_TYPE
+led[1] <= reg[1].DB_MAX_OUTPUT_PORT_TYPE
+led[2] <= reg[2].DB_MAX_OUTPUT_PORT_TYPE
+led[3] <= reg[3].DB_MAX_OUTPUT_PORT_TYPE
+led[4] <= reg[4].DB_MAX_OUTPUT_PORT_TYPE
+led[5] <= reg[5].DB_MAX_OUTPUT_PORT_TYPE
+led[6] <= reg[6].DB_MAX_OUTPUT_PORT_TYPE
+led[7] <= reg[7].DB_MAX_OUTPUT_PORT_TYPE
+segment[0] <= <VCC>
+segment[1] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+segment[2] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+segment[3] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+segment[4] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+segment[5] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+segment[6] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+segment[7] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+

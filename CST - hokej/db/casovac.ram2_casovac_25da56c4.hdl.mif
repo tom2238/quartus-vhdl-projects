@@ -1,0 +1,21 @@
+-- begin_signature
+-- casovac
+-- end_signature
+WIDTH=8;
+DEPTH=16;
+
+ADDRESS_RADIX=UNS;
+DATA_RADIX=BIN;
+
+CONTENT BEGIN
+	9 :	11111100;
+	8 :	01100000;
+	7 :	11011010;
+	6 :	11110010;
+	5 :	01100110;
+	4 :	10110110;
+	3 :	10111110;
+	2 :	11100000;
+	1 :	11111110;
+	0 :	11110110;
+END;

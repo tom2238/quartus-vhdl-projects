@@ -1,0 +1,29 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity klopnyobvodRST is
+	port
+	(
+		R,S,T : in std_logic;
+		Q,Qneg : out std_logic;
+		
+		
+		
+	);
+end klopnyobvodRST;
+
+architecture Behavioral of klopnyobvodRST is
+		
+process(T)
+begin
+if T 'event and T="0" then
+<output> <= <input>;
+if T 'event and T='0' then
+<output> <= <input>;
+end if;
+end process;
+
+
+begin
+		
+end Behavioral;	

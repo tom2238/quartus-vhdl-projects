@@ -1,0 +1,76 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 6.389 ns
+From           : pin_name11
+To             : 7490:inst|11
+From Clock     : --
+To Clock       : pin_name16
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 10.587 ns
+From           : 7490:inst|7~_emulated
+To             : pin_name10
+From Clock     : pin_name15
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case tpd
+Slack          : N/A
+Required Time  : None
+Actual Time    : 15.182 ns
+From           : pin_name11
+To             : pin_name10
+From Clock     : --
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : -0.316 ns
+From           : pin_name14
+To             : 7490:inst|7~_emulated
+From Clock     : --
+To Clock       : pin_name15
+Failed Paths   : 0
+
+Type           : Clock Setup: 'pin_name16'
+Slack          : N/A
+Required Time  : None
+Actual Time    : Restricted to 340.02 MHz ( period = 2.941 ns )
+From           : 7490:inst|19~_emulated
+To             : 7490:inst|11
+From Clock     : pin_name16
+To Clock       : pin_name16
+Failed Paths   : 0
+
+Type           : Clock Setup: 'pin_name15'
+Slack          : N/A
+Required Time  : None
+Actual Time    : Restricted to 360.10 MHz ( period = 2.777 ns )
+From           : 7490:inst|7~_emulated
+To             : 7490:inst|7~_emulated
+From Clock     : pin_name15
+To Clock       : pin_name15
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 0
+
+--------------------------------------------------------------------------------------
+

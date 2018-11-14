@@ -1,0 +1,9 @@
+|KlopnyobvodD
+D => Q~reg0.DATAIN
+D => Qneg~reg0.DATAIN
+T => Qneg~reg0.CLK
+T => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Qneg <= Qneg~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

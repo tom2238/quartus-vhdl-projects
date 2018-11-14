@@ -1,0 +1,9 @@
+|RST
+Q <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+R => inst2.IN0
+T => inst2.IN1
+T => inst.IN0
+S => inst.IN1
+Qneg <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+
+

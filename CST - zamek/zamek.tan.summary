@@ -1,0 +1,166 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 11.893 ns
+From           : but_blue
+To             : blue$latch
+From Clock     : --
+To Clock       : but_blue
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 38.033 ns
+From           : yellow$latch
+To             : yellow
+From Clock     : clk
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : 29.568 ns
+From           : keyboardread0
+To             : heslo_kon[3][2]
+From Clock     : --
+To Clock       : clk
+Failed Paths   : 0
+
+Type           : Clock Setup: 'clk'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 32.92 MHz ( period = 30.379 ns )
+From           : pole0[2]
+To             : pole0[2]
+From Clock     : clk
+To Clock       : clk
+Failed Paths   : 0
+
+Type           : Clock Setup: 'keyboardread2'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 35.89 MHz ( period = 27.864 ns )
+From           : pole0[2]
+To             : polek[1]
+From Clock     : keyboardread2
+To Clock       : keyboardread2
+Failed Paths   : 0
+
+Type           : Clock Setup: 'keyboardread1'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 36.02 MHz ( period = 27.759 ns )
+From           : pole0[2]
+To             : polek[1]
+From Clock     : keyboardread1
+To Clock       : keyboardread1
+Failed Paths   : 0
+
+Type           : Clock Setup: 'keyboardread3'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 36.19 MHz ( period = 27.630 ns )
+From           : pole0[2]
+To             : polek[1]
+From Clock     : keyboardread3
+To Clock       : keyboardread3
+Failed Paths   : 0
+
+Type           : Clock Setup: 'keyboardread0'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 37.81 MHz ( period = 26.445 ns )
+From           : pole0[2]
+To             : pole0[2]
+From Clock     : keyboardread0
+To Clock       : keyboardread0
+Failed Paths   : 0
+
+Type           : Clock Setup: 'but_blue'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 45.00 MHz ( period = 22.223 ns )
+From           : pole0[2]
+To             : polek[1]
+From Clock     : but_blue
+To Clock       : but_blue
+Failed Paths   : 0
+
+Type           : Clock Hold: 'clk'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : regs[0]
+To             : heslo_kon[0][1]
+From Clock     : clk
+To Clock       : clk
+Failed Paths   : 372
+
+Type           : Clock Hold: 'keyboardread3'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : pole0[2]
+To             : heslo[3][0]
+From Clock     : keyboardread3
+To Clock       : keyboardread3
+Failed Paths   : 221
+
+Type           : Clock Hold: 'keyboardread0'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : pole0[2]
+To             : heslo[3][0]
+From Clock     : keyboardread0
+To Clock       : keyboardread0
+Failed Paths   : 221
+
+Type           : Clock Hold: 'keyboardread1'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : pole0[2]
+To             : heslo[3][0]
+From Clock     : keyboardread1
+To Clock       : keyboardread1
+Failed Paths   : 221
+
+Type           : Clock Hold: 'keyboardread2'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : pole0[2]
+To             : heslo[3][0]
+From Clock     : keyboardread2
+To Clock       : keyboardread2
+Failed Paths   : 221
+
+Type           : Clock Hold: 'but_blue'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : polek[2]
+To             : heslo_kon[0][1]
+From Clock     : but_blue
+To Clock       : but_blue
+Failed Paths   : 126
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 1382
+
+--------------------------------------------------------------------------------------
+

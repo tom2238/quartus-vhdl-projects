@@ -1,0 +1,11 @@
+|dekoder
+S0 <= inst9.DB_MAX_OUTPUT_PORT_TYPE
+B => inst2.IN0
+B => inst6.IN0
+D => inst2.IN1
+D => inst7.IN0
+A => inst8.IN2
+C => inst8.IN3
+digit <= <VCC>
+
+

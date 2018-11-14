@@ -1,0 +1,12 @@
+|debounce
+pricist => Q1.DATAA
+reset => Q1.OUTPUTSELECT
+reset => Q2.OUTPUTSELECT
+reset => Q3.OUTPUTSELECT
+led << Q_OUT.DB_MAX_OUTPUT_PORT_TYPE
+clk => Q_OUT.CLK
+clk => Q3.CLK
+clk => Q2.CLK
+clk => Q1.CLK
+
+

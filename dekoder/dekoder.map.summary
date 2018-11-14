@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Wed Oct 22 14:48:48 2014
+Quartus II Version : 9.1 Build 222 10/21/2009 SJ Web Edition
+Revision Name : dekoder
+Top-level Entity Name : dekoder
+Family : Cyclone II
+Total logic elements : 1
+    Total combinational functions : 1
+    Dedicated logic registers : 0
+Total registers : 0
+Total pins : 6
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

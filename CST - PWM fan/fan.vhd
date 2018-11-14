@@ -1,0 +1,95 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+use ieee.std_logic_arith.all;
+
+entity fan is
+	port
+	(
+		clk 	: in std_logic;
+		up		: in std_logic;
+		down	: in std_logic;
+		reset	: in std_logic;
+		fan		: out std_logic
+	);
+end fan;
+
+architecture Behavioral of fan is
+-- signals
+-- cas pwm ramce
+signal cas : std_logic_vector(8 downto 0);
+-- max rozliseni pwm urovni max 256
+signal velikost : std_logic_vector(7 downto 0) := "00000001";
+-- nastaveni velikosti tlacitky
+signal pomer 	: std_logic_vector(7 downto 0);
+-- cas pro tlacika
+signal tik 		: std_logic :='0';
+signal pocet 	: integer :=1;
+
+begin
+
+
+-- pwm cas citac
+process (clk)
+	begin
+	if (rising_edge(clk)) then
+		cas <= cas + 1;
+	end if;
+end process;
+-- clock pro stisk tlacitka
+process(clk)
+begin
+	if(rising_edge(clk)) then
+	pocet <= pocet + 1;
+		if(pocet = 500000) then
+			tik <= not tik;
+			pocet <=1;
+		end if;
+	end if;
+end process;
+-- generace pwm ramce
+process (cas(8), reset)
+	begin
+	-- reset
+	if (reset = '0') then
+		fan <= '1';
+	else
+		if (rising_edge(cas(8)))  then
+		velikost <= velikost + 1;
+			if (pomer > velikost) then
+				fan <= '1';
+			else
+				fan <= '0';
+			end if;
+		end if;
+	end if;
+end process;
+-- tlasictka nahoru dolu jas 
+process (up, down, reset)
+	begin
+	-- reset
+	if (reset = '0') then
+		pomer <= "00000000";
+	else
+		if (rising_edge(tik)) then
+			if (up = '0') then
+				-- jas nahoru
+				if (pomer = "11111111") then
+					-- nic
+				else
+					pomer <= pomer + 1;
+				end if;
+			end if;
+			if (down = '0') then
+				-- jas dolu
+				if (pomer = "00000000") then
+					-- nic
+				else
+					pomer <= pomer - 1;
+				end if;
+			end if;
+		end if;	
+	end if;
+end process;
+end Behavioral;		
+	
