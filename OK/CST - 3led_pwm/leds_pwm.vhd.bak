@@ -1,0 +1,194 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+use ieee.std_logic_arith.all;
+
+entity leds_pwm is
+	port
+	(
+		clk 	: in std_logic;
+		red 	: out std_logic;
+		green	: out std_logic;
+		blue 	: out std_logic;
+		red_b	: in std_logic;
+		green_b	: in std_logic;
+		blue_b	: in std_logic;
+		reset	: in std_logic
+	);
+end leds_pwm;
+
+architecture Behavioral of leds_pwm is
+-- signals
+signal cervena : std_logic_vector(8 downto 0);
+signal modra : std_logic_vector(8 downto 0);
+signal zelena : std_logic_vector(8 downto 0);
+-- reg
+signal reg0 : std_logic_vector(7 downto 0) := "00000001";
+signal reg1 : std_logic_vector(7 downto 0) := "00000001";
+signal reg2 : std_logic_vector(7 downto 0) := "00000001";
+signal prepin0 : std_logic_vector(7 downto 0);
+signal prepin1 : std_logic_vector(7 downto 0);
+signal prepin2 : std_logic_vector(7 downto 0);
+-- stat
+signal stat0 : std_logic :='0';
+signal stat1 : std_logic :='0';
+signal stat2 : std_logic :='0';
+-- stat citac
+signal stat0c : std_logic :='1';
+signal stat1c : std_logic :='1';
+signal stat2c : std_logic :='1';
+-- 10hz
+signal  hz : std_logic :='0';
+signal count : integer :=1;
+
+begin
+-- citac cervena
+process (clk)
+	begin
+	if (rising_edge(clk)) and (stat0c='1') then
+		cervena <= cervena + 1;
+	end if;
+end process;
+-- citac modra
+process (clk)
+	begin
+	if (rising_edge(clk)) and (stat1c='1')then
+		modra <= modra + 1;
+	end if;
+end process;
+-- citac zelena
+process (clk)
+	begin
+	if (rising_edge(clk)) and (stat2c='1')then
+		zelena <= zelena + 1;
+	end if;
+end process;
+-- generace 20 hz hodin
+process(clk)
+begin
+	if(rising_edge(clk)) then
+	count <=count+1;
+		if(count = 600000) then
+		hz <= not hz;
+		count <=1;
+	end if;
+end if;
+end process;
+-- pwm
+-- delka cyklu
+process (red_b, green_b, blue_b, reset, hz)
+	begin
+	if (rising_edge(hz)) then
+	if (reset = '0') then
+		prepin0 <= "00000000";
+		prepin1 <= "00000000";
+		prepin2 <= "00000000";
+		stat0c <= '0';
+		stat1c <= '0';
+		stat2c <= '0';
+	else
+		if (red_b = '0') then
+			if (stat0 = '0') then
+				if (prepin0 = "11111111") then
+					stat0 <= '1';
+				else
+					prepin0 <= prepin0 + 1;
+				end if;	
+			end if;		
+			if (stat0 = '1') then	
+				if (prepin0 = "00000000") then
+					stat0 <= '0';
+				else
+					prepin0 <= prepin0 - 1;
+				end if;
+			end if;
+			stat0c <= '1';
+		end if;
+		if (blue_b = '0') then
+			if (stat1 = '0') then
+				if (prepin1 = "11111111") then
+					stat1 <= '1';
+				else
+					prepin1 <= prepin1 + 1;
+				end if;	
+			end if;		
+			if (stat1 = '1') then
+				if (prepin1 = "00000000") then
+					stat1 <= '0';
+				else
+					prepin1 <= prepin1 - 1;
+				end if;
+			end if;
+			stat1c <= '1';
+		end if;
+		if (green_b = '0') then
+			if (stat2 = '0') then
+				if (prepin2 = "11111111") then
+					stat2 <= '1';
+				else
+					prepin2 <= prepin2 + 1;
+				end if;	
+			end if;		
+			if (stat2 = '1') then	
+				if (prepin2 = "00000000") then
+					stat2 <= '0';
+				else
+					prepin2 <= prepin2 - 1;
+				end if;
+			end if;
+			stat2c <= '1';
+		end if;
+	end if;
+end if;	
+end process;
+
+-- cervena led
+process (cervena(8), reset)
+	begin
+	if (reset = '0') then
+		red <= '0';
+		reg0 <= "00000001";
+	elsif (rising_edge(cervena(8)))  then
+	reg0 <= reg0 + 1;
+		if (prepin0 > reg0) then
+			red <= '1';
+		else
+			red <= '0';
+		end if;
+	end if;
+end process;
+
+-- modra led
+process (modra(8), reset)
+	begin
+	if (reset = '0') then
+		blue <= '0';
+		reg1 <= "00000001";
+	elsif (rising_edge(modra(8)))  then
+	reg1 <= reg1 + 1;
+		if (prepin1 > reg1) then
+			blue <= '1';
+		else
+			blue <= '0';
+		end if;
+	end if;
+end process;
+
+-- zelena led
+process (zelena(8), reset)
+	begin
+	if (reset = '0') then
+		green <= '0';
+		reg2 <= "00000001";
+	elsif (rising_edge(zelena(8)))  then
+	reg2 <= reg2 + 1;
+		if (prepin2 > reg2) then
+			green <= '1';
+		else
+			green <= '0';
+		end if;
+	end if;
+end process;
+
+end Behavioral;		
+	

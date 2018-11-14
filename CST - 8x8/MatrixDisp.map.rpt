@@ -1,0 +1,380 @@
+Analysis & Synthesis report for MatrixDisp
+Wed Mar 30 19:12:01 2016
+Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. Registers Removed During Synthesis
+  8. Removed Registers Triggering Further Register Optimizations
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                      ;
++------------------------------------+----------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Wed Mar 30 19:12:01 2016        ;
+; Quartus II Version                 ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
+; Revision Name                      ; MatrixDisp                                   ;
+; Top-level Entity Name              ; MatrixDisp                                   ;
+; Family                             ; Cyclone II                                   ;
+; Total logic elements               ; 171                                          ;
+;     Total combinational functions  ; 142                                          ;
+;     Dedicated logic registers      ; 92                                           ;
+; Total registers                    ; 92                                           ;
+; Total pins                         ; 18                                           ;
+; Total virtual pins                 ; 0                                            ;
+; Total memory bits                  ; 0                                            ;
+; Embedded Multiplier 9-bit elements ; 0                                            ;
+; Total PLLs                         ; 0                                            ;
++------------------------------------+----------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP2C5T144C8        ;                    ;
+; Top-level entity name                                                      ; MatrixDisp         ; MatrixDisp         ;
+; Family name                                                                ; Cyclone II         ; Stratix II         ;
+; Use Generated Physical Constraints File                                    ; Off                ;                    ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report                         ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                          ;
++----------------------------------+-----------------+-----------------+------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path             ;
++----------------------------------+-----------------+-----------------+------------------------------------------+
+; MatrixDisp.vhd                   ; yes             ; User VHDL File  ; D:/xA/Škola/CST/CST - 8x8/MatrixDisp.vhd ;
++----------------------------------+-----------------+-----------------+------------------------------------------+
+
+
++--------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary            ;
++---------------------------------------------+----------+
+; Resource                                    ; Usage    ;
++---------------------------------------------+----------+
+; Estimated Total logic elements              ; 171      ;
+;                                             ;          ;
+; Total combinational functions               ; 142      ;
+; Logic element usage by number of LUT inputs ;          ;
+;     -- 4 input functions                    ; 46       ;
+;     -- 3 input functions                    ; 18       ;
+;     -- <=2 input functions                  ; 78       ;
+;                                             ;          ;
+; Logic elements by mode                      ;          ;
+;     -- normal mode                          ; 117      ;
+;     -- arithmetic mode                      ; 25       ;
+;                                             ;          ;
+; Total registers                             ; 92       ;
+;     -- Dedicated logic registers            ; 92       ;
+;     -- I/O registers                        ; 0        ;
+;                                             ;          ;
+; I/O pins                                    ; 18       ;
+; Maximum fan-out node                        ; data[12] ;
+; Maximum fan-out                             ; 46       ;
+; Total fan-out                               ; 594      ;
+; Average fan-out                             ; 2.36     ;
++---------------------------------------------+----------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; |MatrixDisp                ; 142 (142)         ; 92 (92)      ; 0           ; 0            ; 0       ; 0         ; 18   ; 0            ; |MatrixDisp         ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                               ;
++-----------------------------------------+----------------------------------------+
+; Register name                           ; Reason for Removal                     ;
++-----------------------------------------+----------------------------------------+
+; rdo0[5]                                 ; Merged with rdo7[0]                    ;
+; rdo7[4]                                 ; Merged with rdo7[0]                    ;
+; rdo5[0]                                 ; Merged with rdo7[0]                    ;
+; rdo7[5]                                 ; Merged with rdo7[0]                    ;
+; rdo1[7]                                 ; Merged with rdo7[0]                    ;
+; rdo5[7]                                 ; Merged with rdo7[0]                    ;
+; rdo2[7]                                 ; Merged with rdo7[0]                    ;
+; rdo4[0]                                 ; Merged with rdo7[0]                    ;
+; rdo3[0]                                 ; Merged with rdo7[0]                    ;
+; rdo0[2]                                 ; Merged with rdo7[0]                    ;
+; rdo7[1,3,7]                             ; Merged with rdo7[0]                    ;
+; rdo2[0]                                 ; Merged with rdo7[0]                    ;
+; rdo0[1]                                 ; Merged with rdo7[0]                    ;
+; rdo7[6]                                 ; Merged with rdo7[0]                    ;
+; rdo4[7]                                 ; Merged with rdo7[0]                    ;
+; rdo1[0]                                 ; Merged with rdo7[0]                    ;
+; rdo0[0,3]                               ; Merged with rdo7[0]                    ;
+; rdo7[2]                                 ; Merged with rdo7[0]                    ;
+; rdo0[4,7]                               ; Merged with rdo7[0]                    ;
+; rdo6[7]                                 ; Merged with rdo7[0]                    ;
+; rdo3[7]                                 ; Merged with rdo7[0]                    ;
+; rdo6[0]                                 ; Merged with rdo7[0]                    ;
+; rdo0[6]                                 ; Merged with rdo7[0]                    ;
+; rdo5[2]                                 ; Merged with rdo6[1]                    ;
+; rdo2[5]                                 ; Merged with rdo6[1]                    ;
+; rdo1[6]                                 ; Merged with rdo6[1]                    ;
+; rdo5[1]                                 ; Merged with rdo6[2]                    ;
+; rdo2[6]                                 ; Merged with rdo6[2]                    ;
+; rdo1[5]                                 ; Merged with rdo6[2]                    ;
+; rdo3[6]                                 ; Merged with rdo6[3]                    ;
+; rdo1[3..4]                              ; Merged with rdo6[3]                    ;
+; rdo3[1]                                 ; Merged with rdo6[3]                    ;
+; rdo4[6]                                 ; Merged with rdo6[3]                    ;
+; rdo6[4]                                 ; Merged with rdo6[3]                    ;
+; rdo4[1]                                 ; Merged with rdo6[3]                    ;
+; rdo2[1]                                 ; Merged with rdo6[5]                    ;
+; rdo5[6]                                 ; Merged with rdo6[5]                    ;
+; rdo1[2]                                 ; Merged with rdo6[5]                    ;
+; rdo2[2]                                 ; Merged with rdo6[6]                    ;
+; rdo5[5]                                 ; Merged with rdo6[6]                    ;
+; rdo1[1]                                 ; Merged with rdo6[6]                    ;
+; rdo3[2,5]                               ; Merged with rdo5[3]                    ;
+; rdo5[4]                                 ; Merged with rdo5[3]                    ;
+; rdo2[3..4]                              ; Merged with rdo5[3]                    ;
+; rdo4[2,5]                               ; Merged with rdo5[3]                    ;
+; rdo3[3..4]                              ; Merged with rdo4[3]                    ;
+; rdo4[4]                                 ; Merged with rdo4[3]                    ;
+; rdo6[3]                                 ; Stuck at GND due to stuck port data_in ;
+; rd6[3..4]                               ; Stuck at GND due to stuck port data_in ;
+; rd4[1,6]                                ; Stuck at GND due to stuck port data_in ;
+; rd3[1,6]                                ; Stuck at GND due to stuck port data_in ;
+; rd1[3..4]                               ; Stuck at GND due to stuck port data_in ;
+; data[0]                                 ; Merged with registr[0]                 ;
+; rd0[0]                                  ; Merged with rd7[0]                     ;
+; rd1[0]                                  ; Merged with rd7[0]                     ;
+; rd2[0]                                  ; Merged with rd7[0]                     ;
+; rd3[0]                                  ; Merged with rd7[0]                     ;
+; rd4[0]                                  ; Merged with rd7[0]                     ;
+; rd5[0]                                  ; Merged with rd7[0]                     ;
+; rd6[0]                                  ; Merged with rd7[0]                     ;
+; rd0[1]                                  ; Merged with rd7[1]                     ;
+; rd0[2]                                  ; Merged with rd7[2]                     ;
+; rd0[3]                                  ; Merged with rd7[3]                     ;
+; rd0[4]                                  ; Merged with rd7[4]                     ;
+; rd0[5]                                  ; Merged with rd7[5]                     ;
+; rd0[6]                                  ; Merged with rd7[6]                     ;
+; rd0[7]                                  ; Merged with rd7[7]                     ;
+; rd1[7]                                  ; Merged with rd7[7]                     ;
+; rd2[7]                                  ; Merged with rd7[7]                     ;
+; rd3[7]                                  ; Merged with rd7[7]                     ;
+; rd4[7]                                  ; Merged with rd7[7]                     ;
+; rd5[7]                                  ; Merged with rd7[7]                     ;
+; rd6[7]                                  ; Merged with rd7[7]                     ;
+; rd2[3]                                  ; Merged with rd5[3]                     ;
+; rd2[4]                                  ; Merged with rd5[4]                     ;
+; rd3[2]                                  ; Merged with rd4[2]                     ;
+; rd3[3]                                  ; Merged with rd4[3]                     ;
+; rd3[4]                                  ; Merged with rd4[4]                     ;
+; rd3[5]                                  ; Merged with rd4[5]                     ;
+; registr[1]                              ; Merged with data[1]                    ;
+; registr[2]                              ; Merged with data[2]                    ;
+; registr[3]                              ; Merged with data[3]                    ;
+; registr[4]                              ; Merged with data[4]                    ;
+; registr[5]                              ; Merged with data[5]                    ;
+; registr[6]                              ; Merged with data[6]                    ;
+; registr[7]                              ; Merged with data[7]                    ;
+; registr[8]                              ; Merged with data[8]                    ;
+; registr[9]                              ; Merged with data[9]                    ;
+; registr[10]                             ; Merged with data[10]                   ;
+; registr[11]                             ; Merged with data[11]                   ;
+; Total Number of Removed Registers = 103 ;                                        ;
++-----------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                        ;
++---------------+---------------------------+----------------------------------------+
+; Register name ; Reason for Removal        ; Registers Removed due to This Register ;
++---------------+---------------------------+----------------------------------------+
+; rdo6[3]       ; Stuck at GND              ; rd6[3], rd4[6], rd3[6], rd1[3]         ;
+;               ; due to stuck port data_in ;                                        ;
++---------------+---------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 92    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 12    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; regs[0]                                 ; 13      ;
+; dregs[0]                                ; 2       ;
+; rdo7[0]                                 ; 8       ;
+; rdo6[6]                                 ; 4       ;
+; rdo6[1]                                 ; 4       ;
+; rdo4[3]                                 ; 3       ;
+; rndreg[0]                               ; 6       ;
+; d0[10]                                  ; 2       ;
+; d0[9]                                   ; 1       ;
+; d0[8]                                   ; 1       ;
+; d0[7]                                   ; 1       ;
+; d0[6]                                   ; 1       ;
+; d0[5]                                   ; 1       ;
+; d0[16]                                  ; 5       ;
+; d0[4]                                   ; 1       ;
+; d0[15]                                  ; 1       ;
+; d0[3]                                   ; 1       ;
+; d0[14]                                  ; 1       ;
+; d0[2]                                   ; 1       ;
+; d0[13]                                  ; 1       ;
+; d0[1]                                   ; 1       ;
+; d0[12]                                  ; 1       ;
+; d0[11]                                  ; 1       ;
+; Total number of inverted registers = 23 ;         ;
++-----------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 256:1              ; 2 bits    ; 340 LEs       ; 8 LEs                ; 332 LEs                ; No         ; |MatrixDisp|Mux4           ;
+; 256:1              ; 2 bits    ; 340 LEs       ; 2 LEs                ; 338 LEs                ; No         ; |MatrixDisp|Mux7           ;
+; 256:1              ; 2 bits    ; 340 LEs       ; 12 LEs               ; 328 LEs                ; No         ; |MatrixDisp|Mux6           ;
+; 256:1              ; 2 bits    ; 340 LEs       ; 12 LEs               ; 328 LEs                ; No         ; |MatrixDisp|Mux5           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+    Info: Processing started: Wed Mar 30 19:11:54 2016
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MatrixDisp -c MatrixDisp
+Info: Found 2 design units, including 1 entities, in source file matrixdisp.vhd
+    Info: Found design unit 1: MatrixDisp-Behavioral
+    Info: Found entity 1: MatrixDisp
+Info: Elaborating entity "MatrixDisp" for the top level hierarchy
+Info: Implemented 192 device resources after synthesis - the final resource count might be different
+    Info: Implemented 2 input pins
+    Info: Implemented 16 output pins
+    Info: Implemented 174 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 189 megabytes
+    Info: Processing ended: Wed Mar 30 19:12:01 2016
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:04
+
+

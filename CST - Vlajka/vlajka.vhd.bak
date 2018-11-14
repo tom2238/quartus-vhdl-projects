@@ -1,0 +1,74 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+entity vlajka is
+    Port ( 	clk : in  STD_LOGIC;
+			Hsync : out  STD_LOGIC;
+			Vsync : out  STD_LOGIC;
+			Rout : out  STD_LOGIC;
+			Gout : out STD_LOGIC;
+			Bout : out STD_LOGIC);
+end vlajka;
+
+architecture Behavioral of vlajka is
+
+signal x : STD_LOGIC_VECTOR (10 downto 0);
+signal y : STD_LOGIC_VECTOR (10 downto 0);
+
+signal R : STD_LOGIC;
+signal G : STD_LOGIC; 
+signal B : STD_LOGIC; 
+
+begin
+
+process(clk)
+begin
+	if(clk'event and clk = '1') then
+		x <= x+1;
+		if x = 1038 then
+			x <= (others => '0');
+			y <= y+1;
+			if y = 665 then
+				y <= (others => '0');
+			end if;
+		end if;
+	end if;
+end process;
+
+process(clk)
+begin
+	if(clk'event and clk = '1') then
+		if y < 300 then
+			if y >= x then
+				r <= '0';
+				g <= '0';
+			   b <= '1';
+			else
+				r <= '1';
+				g <= '1';
+			   b <= '1';
+			end if;
+		else
+			if (599-y) >= x then
+				r <= '0';
+				g <= '0';
+				b <= '1';
+			else
+				r <= '1';
+				g <= '0';
+				b <= '0';
+			end if;
+		end if;
+	end if;
+end process;
+
+Hsync <= '1' when x > 855 and x < 975 else '0';
+Vsync <= '1' when y 	> 636 and y	 < 642 else '0';
+
+Rout <= R when x < 801 else '0';
+Gout <= G when x < 801 else '0';
+Bout <= B when x < 801 else '0';
+
+end Behavioral;

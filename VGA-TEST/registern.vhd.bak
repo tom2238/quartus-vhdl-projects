@@ -1,0 +1,41 @@
+-------------------------------------------------------------
+-- A N bit Register
+-- Author       : David Ng, Ben Talbot
+-- Student ID   : 285351, 285201
+-- Date         : November 7, 2000
+-- File Name    : registerN.vhd
+-- Architecture : RTL
+-- Description  :
+-- 	The width of the register is determined by generic N
+--   
+-- Acknowledgements:
+-------------------------------------------------------------
+library IEEE;
+use IEEE.std_logic_1164.all;
+
+entity registerN is
+    generic(N : positive := 4);
+    port (	Input   : in std_logic;
+          	Load  	: in std_logic; --active low
+--			Clock	: in std_logic;
+	  		Reset	: in std_logic; --active low
+          	Output  : out std_logic;
+end registerN;
+
+-- structural implementation of the N-bit adder
+architecture behavioural of registerN is
+
+begin
+
+	process(Reset, Load)
+	begin
+		if(Reset = '0') then 
+			Output <= (others => '0');
+--		elsif Clock = '1' and Clock'event then
+		elsif (Load = '0') then
+				Output <= Input;
+			--end if;
+		end if;
+	end process;
+
+end behavioural;

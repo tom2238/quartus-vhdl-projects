@@ -1,0 +1,8 @@
+|led
+tlacitko_s => led.IN0
+tlacitko_v => comb.IN1
+tlacitko_v => comb.IN1
+tlacitko_v => led.IN1
+led <= led$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+

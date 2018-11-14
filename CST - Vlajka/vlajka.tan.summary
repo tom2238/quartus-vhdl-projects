@@ -1,0 +1,46 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 9.985 ns
+From           : y[1]
+To             : Vsync
+From Clock     : clk
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Clock Setup: 'pll1:c1|altpll:altpll_component|_clk0'
+Slack          : 39.886 ns
+Required Time  : 20.00 MHz ( period = 49.999 ns )
+Actual Time    : 98.88 MHz ( period = 10.113 ns )
+From           : y[7]
+To             : G
+From Clock     : pll1:c1|altpll:altpll_component|_clk0
+To Clock       : pll1:c1|altpll:altpll_component|_clk0
+Failed Paths   : 0
+
+Type           : Clock Hold: 'pll1:c1|altpll:altpll_component|_clk0'
+Slack          : 0.499 ns
+Required Time  : 20.00 MHz ( period = 49.999 ns )
+Actual Time    : N/A
+From           : x[10]
+To             : x[10]
+From Clock     : pll1:c1|altpll:altpll_component|_clk0
+To Clock       : pll1:c1|altpll:altpll_component|_clk0
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 0
+
+--------------------------------------------------------------------------------------
+

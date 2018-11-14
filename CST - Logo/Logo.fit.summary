@@ -1,0 +1,16 @@
+Fitter Status : Successful - Wed Apr 20 20:21:10 2016
+Quartus II Version : 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition
+Revision Name : Logo
+Top-level Entity Name : Logo
+Family : Cyclone II
+Device : EP2C5T144C7
+Timing Models : Final
+Total logic elements : 128 / 4,608 ( 3 % )
+    Total combinational functions : 115 / 4,608 ( 2 % )
+    Dedicated logic registers : 94 / 4,608 ( 2 % )
+Total registers : 94
+Total pins : 17 / 89 ( 19 % )
+Total virtual pins : 0
+Total memory bits : 0 / 119,808 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 26 ( 0 % )
+Total PLLs : 0 / 2 ( 0 % )

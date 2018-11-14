@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Wed Mar 30 19:12:01 2016
+Quartus II Version : 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition
+Revision Name : MatrixDisp
+Top-level Entity Name : MatrixDisp
+Family : Cyclone II
+Total logic elements : 171
+    Total combinational functions : 142
+    Dedicated logic registers : 92
+Total registers : 92
+Total pins : 18
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

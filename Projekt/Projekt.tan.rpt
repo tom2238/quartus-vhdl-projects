@@ -1,0 +1,955 @@
+Classic Timing Analyzer report for Projekt
+Tue May 19 18:00:40 2015
+Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Clock Setup: 'clk'
+  6. tsu
+  7. tco
+  8. th
+  9. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                     ;
++------------------------------+-------+---------------+----------------------------------+---------------+------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                      ; From          ; To         ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+----------------------------------+---------------+------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 12.806 ns                        ; keyboardread2 ; cislo4[5]  ; --         ; clk      ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 21.118 ns                        ; cislo6[3]     ; segment[3] ; clk        ; --       ; 0            ;
+; Worst-case th                ; N/A   ; None          ; -0.521 ns                        ; keyboardread0 ; mem[3][4]  ; --         ; clk      ; 0            ;
+; Clock Setup: 'clk'           ; N/A   ; None          ; 94.93 MHz ( period = 10.534 ns ) ; keyseg[3]     ; cislo4[5]  ; clk        ; clk      ; 0            ;
+; Total number of failed paths ;       ;               ;                                  ;               ;            ;            ;          ; 0            ;
++------------------------------+-------+---------------+----------------------------------+---------------+------------+------------+----------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                                                            ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                                                               ; Setting            ; From ; To ; Entity Name ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                                                          ; EP2C5T144C8        ;      ;    ;             ;
+; Timing Models                                                                                        ; Final              ;      ;    ;             ;
+; Default hold multicycle                                                                              ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                                                            ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                                                               ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                                                       ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                                                                     ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                                                                ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                                                              ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                                                                     ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                                                                 ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                                                        ; Off                ;      ;    ;             ;
+; Minimum Core Junction Temperature                                                                    ; 0                  ;      ;    ;             ;
+; Maximum Core Junction Temperature                                                                    ; 85                 ;      ;    ;             ;
+; Number of source nodes to report per destination node                                                ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                                                                ; 10                 ;      ;    ;             ;
+; Number of paths to report                                                                            ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                                                         ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                                                               ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                                                           ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                                                         ; On                 ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis                                       ; Off                ;      ;    ;             ;
+; Reports worst-case timing paths for each clock domain and analysis                                   ; On                 ;      ;    ;             ;
+; Specifies the maximum number of worst-case timing paths to report for each clock domain and analysis ; 100                ;      ;    ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation                                  ; Off                ;      ;    ;             ;
+; Output I/O Timing Endpoint                                                                           ; Near End           ;      ;    ;             ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; clk             ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'clk'                                                                                                                                                                                                                ;
++-----------------------------------------+-----------------------------------------------------+-----------+-----------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack                                   ; Actual fmax (period)                                ; From      ; To        ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+-----------+-----------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A                                     ; 94.93 MHz ( period = 10.534 ns )                    ; keyseg[3] ; cislo4[5] ; clk        ; clk      ; None                        ; None                      ; 10.271 ns               ;
+; N/A                                     ; 96.45 MHz ( period = 10.368 ns )                    ; keyseg[1] ; cislo4[5] ; clk        ; clk      ; None                        ; None                      ; 10.105 ns               ;
+; N/A                                     ; 97.51 MHz ( period = 10.255 ns )                    ; keyseg[0] ; cislo4[5] ; clk        ; clk      ; None                        ; None                      ; 9.992 ns                ;
+; N/A                                     ; 99.22 MHz ( period = 10.079 ns )                    ; keyseg[2] ; cislo4[5] ; clk        ; clk      ; None                        ; None                      ; 9.816 ns                ;
+; N/A                                     ; 102.52 MHz ( period = 9.754 ns )                    ; keyseg[3] ; cislo4[6] ; clk        ; clk      ; None                        ; None                      ; 9.491 ns                ;
+; N/A                                     ; 102.53 MHz ( period = 9.753 ns )                    ; index[0]  ; mem[2][4] ; clk        ; clk      ; None                        ; None                      ; 9.479 ns                ;
+; N/A                                     ; 102.57 MHz ( period = 9.749 ns )                    ; index[0]  ; mem[2][6] ; clk        ; clk      ; None                        ; None                      ; 9.481 ns                ;
+; N/A                                     ; 102.74 MHz ( period = 9.733 ns )                    ; index[0]  ; mem[2][2] ; clk        ; clk      ; None                        ; None                      ; 9.480 ns                ;
+; N/A                                     ; 102.81 MHz ( period = 9.727 ns )                    ; index[0]  ; mem[2][5] ; clk        ; clk      ; None                        ; None                      ; 9.474 ns                ;
+; N/A                                     ; 102.85 MHz ( period = 9.723 ns )                    ; keyseg[3] ; cislo4[2] ; clk        ; clk      ; None                        ; None                      ; 9.457 ns                ;
+; N/A                                     ; 104.30 MHz ( period = 9.588 ns )                    ; keyseg[1] ; cislo4[6] ; clk        ; clk      ; None                        ; None                      ; 9.325 ns                ;
+; N/A                                     ; 104.64 MHz ( period = 9.557 ns )                    ; keyseg[1] ; cislo4[2] ; clk        ; clk      ; None                        ; None                      ; 9.291 ns                ;
+; N/A                                     ; 104.88 MHz ( period = 9.535 ns )                    ; keyseg[3] ; mem[2][4] ; clk        ; clk      ; None                        ; None                      ; 9.268 ns                ;
+; N/A                                     ; 104.92 MHz ( period = 9.531 ns )                    ; keyseg[3] ; mem[2][6] ; clk        ; clk      ; None                        ; None                      ; 9.270 ns                ;
+; N/A                                     ; 105.10 MHz ( period = 9.515 ns )                    ; keyseg[3] ; mem[2][2] ; clk        ; clk      ; None                        ; None                      ; 9.269 ns                ;
+; N/A                                     ; 105.11 MHz ( period = 9.514 ns )                    ; index[1]  ; cislo4[5] ; clk        ; clk      ; None                        ; None                      ; 9.244 ns                ;
+; N/A                                     ; 105.16 MHz ( period = 9.509 ns )                    ; keyseg[3] ; mem[2][5] ; clk        ; clk      ; None                        ; None                      ; 9.263 ns                ;
+; N/A                                     ; 105.19 MHz ( period = 9.507 ns )                    ; keyseg[1] ; mem[2][4] ; clk        ; clk      ; None                        ; None                      ; 9.240 ns                ;
+; N/A                                     ; 105.23 MHz ( period = 9.503 ns )                    ; keyseg[1] ; mem[2][6] ; clk        ; clk      ; None                        ; None                      ; 9.242 ns                ;
+; N/A                                     ; 105.41 MHz ( period = 9.487 ns )                    ; keyseg[1] ; mem[2][2] ; clk        ; clk      ; None                        ; None                      ; 9.241 ns                ;
+; N/A                                     ; 105.47 MHz ( period = 9.481 ns )                    ; keyseg[1] ; mem[2][5] ; clk        ; clk      ; None                        ; None                      ; 9.235 ns                ;
+; N/A                                     ; 105.54 MHz ( period = 9.475 ns )                    ; keyseg[0] ; cislo4[6] ; clk        ; clk      ; None                        ; None                      ; 9.212 ns                ;
+; N/A                                     ; 105.56 MHz ( period = 9.473 ns )                    ; index[2]  ; mem[2][4] ; clk        ; clk      ; None                        ; None                      ; 9.199 ns                ;
+; N/A                                     ; 105.61 MHz ( period = 9.469 ns )                    ; index[2]  ; mem[2][6] ; clk        ; clk      ; None                        ; None                      ; 9.201 ns                ;
+; N/A                                     ; 105.63 MHz ( period = 9.467 ns )                    ; keyseg[3] ; cislo4[4] ; clk        ; clk      ; None                        ; None                      ; 9.201 ns                ;
+; N/A                                     ; 105.79 MHz ( period = 9.453 ns )                    ; index[2]  ; mem[2][2] ; clk        ; clk      ; None                        ; None                      ; 9.200 ns                ;
+; N/A                                     ; 105.85 MHz ( period = 9.447 ns )                    ; index[2]  ; mem[2][5] ; clk        ; clk      ; None                        ; None                      ; 9.194 ns                ;
+; N/A                                     ; 105.89 MHz ( period = 9.444 ns )                    ; keyseg[0] ; cislo4[2] ; clk        ; clk      ; None                        ; None                      ; 9.178 ns                ;
+; N/A                                     ; 105.99 MHz ( period = 9.435 ns )                    ; keyseg[3] ; cislo2[6] ; clk        ; clk      ; None                        ; None                      ; 9.166 ns                ;
+; N/A                                     ; 106.29 MHz ( period = 9.408 ns )                    ; keyseg[3] ; cislo2[1] ; clk        ; clk      ; None                        ; None                      ; 9.139 ns                ;
+; N/A                                     ; 106.34 MHz ( period = 9.404 ns )                    ; index[0]  ; mem[1][6] ; clk        ; clk      ; None                        ; None                      ; 9.149 ns                ;
+; N/A                                     ; 106.66 MHz ( period = 9.376 ns )                    ; keyseg[3] ; cislo4[1] ; clk        ; clk      ; None                        ; None                      ; 9.108 ns                ;
+; N/A                                     ; 107.02 MHz ( period = 9.344 ns )                    ; keyseg[3] ; cislo4[7] ; clk        ; clk      ; None                        ; None                      ; 9.081 ns                ;
+; N/A                                     ; 107.24 MHz ( period = 9.325 ns )                    ; index[0]  ; mem[2][3] ; clk        ; clk      ; None                        ; None                      ; 9.057 ns                ;
+; N/A                                     ; 107.41 MHz ( period = 9.310 ns )                    ; index[0]  ; mem[5][3] ; clk        ; clk      ; None                        ; None                      ; 9.038 ns                ;
+; N/A                                     ; 107.52 MHz ( period = 9.301 ns )                    ; keyseg[1] ; cislo4[4] ; clk        ; clk      ; None                        ; None                      ; 9.035 ns                ;
+; N/A                                     ; 107.54 MHz ( period = 9.299 ns )                    ; keyseg[2] ; cislo4[6] ; clk        ; clk      ; None                        ; None                      ; 9.036 ns                ;
+; N/A                                     ; 107.57 MHz ( period = 9.296 ns )                    ; index[1]  ; mem[2][4] ; clk        ; clk      ; None                        ; None                      ; 9.022 ns                ;
+; N/A                                     ; 107.58 MHz ( period = 9.295 ns )                    ; index[0]  ; cislo4[5] ; clk        ; clk      ; None                        ; None                      ; 9.025 ns                ;
+; N/A                                     ; 107.62 MHz ( period = 9.292 ns )                    ; index[1]  ; mem[2][6] ; clk        ; clk      ; None                        ; None                      ; 9.024 ns                ;
+; N/A                                     ; 107.69 MHz ( period = 9.286 ns )                    ; index[0]  ; mem[0][6] ; clk        ; clk      ; None                        ; None                      ; 9.018 ns                ;
+; N/A                                     ; 107.81 MHz ( period = 9.276 ns )                    ; index[1]  ; mem[2][2] ; clk        ; clk      ; None                        ; None                      ; 9.023 ns                ;
+; N/A                                     ; 107.87 MHz ( period = 9.270 ns )                    ; index[1]  ; mem[2][5] ; clk        ; clk      ; None                        ; None                      ; 9.017 ns                ;
+; N/A                                     ; 107.89 MHz ( period = 9.269 ns )                    ; keyseg[1] ; cislo2[6] ; clk        ; clk      ; None                        ; None                      ; 9.000 ns                ;
+; N/A                                     ; 107.90 MHz ( period = 9.268 ns )                    ; keyseg[2] ; cislo4[2] ; clk        ; clk      ; None                        ; None                      ; 9.002 ns                ;
+; N/A                                     ; 107.90 MHz ( period = 9.268 ns )                    ; index[0]  ; mem[5][5] ; clk        ; clk      ; None                        ; None                      ; 8.996 ns                ;
+; N/A                                     ; 108.20 MHz ( period = 9.242 ns )                    ; keyseg[1] ; cislo2[1] ; clk        ; clk      ; None                        ; None                      ; 8.973 ns                ;
+; N/A                                     ; 108.34 MHz ( period = 9.230 ns )                    ; index[0]  ; mem[4][3] ; clk        ; clk      ; None                        ; None                      ; 8.973 ns                ;
+; N/A                                     ; 108.58 MHz ( period = 9.210 ns )                    ; keyseg[1] ; cislo4[1] ; clk        ; clk      ; None                        ; None                      ; 8.942 ns                ;
+; N/A                                     ; 108.60 MHz ( period = 9.208 ns )                    ; index[0]  ; mem[5][4] ; clk        ; clk      ; None                        ; None                      ; 8.934 ns                ;
+; N/A                                     ; 108.74 MHz ( period = 9.196 ns )                    ; keyseg[0] ; mem[2][4] ; clk        ; clk      ; None                        ; None                      ; 8.929 ns                ;
+; N/A                                     ; 108.79 MHz ( period = 9.192 ns )                    ; keyseg[0] ; mem[2][6] ; clk        ; clk      ; None                        ; None                      ; 8.931 ns                ;
+; N/A                                     ; 108.84 MHz ( period = 9.188 ns )                    ; keyseg[0] ; cislo4[4] ; clk        ; clk      ; None                        ; None                      ; 8.922 ns                ;
+; N/A                                     ; 108.86 MHz ( period = 9.186 ns )                    ; keyseg[3] ; mem[1][6] ; clk        ; clk      ; None                        ; None                      ; 8.938 ns                ;
+; N/A                                     ; 108.89 MHz ( period = 9.184 ns )                    ; index[0]  ; mem[3][1] ; clk        ; clk      ; None                        ; None                      ; 8.920 ns                ;
+; N/A                                     ; 108.89 MHz ( period = 9.184 ns )                    ; index[0]  ; mem[3][7] ; clk        ; clk      ; None                        ; None                      ; 8.920 ns                ;
+; N/A                                     ; 108.96 MHz ( period = 9.178 ns )                    ; keyseg[1] ; cislo4[7] ; clk        ; clk      ; None                        ; None                      ; 8.915 ns                ;
+; N/A                                     ; 108.98 MHz ( period = 9.176 ns )                    ; keyseg[0] ; mem[2][2] ; clk        ; clk      ; None                        ; None                      ; 8.930 ns                ;
+; N/A                                     ; 109.05 MHz ( period = 9.170 ns )                    ; keyseg[0] ; mem[2][5] ; clk        ; clk      ; None                        ; None                      ; 8.924 ns                ;
+; N/A                                     ; 109.11 MHz ( period = 9.165 ns )                    ; keyseg[3] ; cislo0[2] ; clk        ; clk      ; None                        ; None                      ; 8.899 ns                ;
+; N/A                                     ; 109.19 MHz ( period = 9.158 ns )                    ; keyseg[1] ; mem[1][6] ; clk        ; clk      ; None                        ; None                      ; 8.910 ns                ;
+; N/A                                     ; 109.22 MHz ( period = 9.156 ns )                    ; keyseg[0] ; cislo2[6] ; clk        ; clk      ; None                        ; None                      ; 8.887 ns                ;
+; N/A                                     ; 109.54 MHz ( period = 9.129 ns )                    ; keyseg[0] ; cislo2[1] ; clk        ; clk      ; None                        ; None                      ; 8.860 ns                ;
+; N/A                                     ; 109.60 MHz ( period = 9.124 ns )                    ; index[2]  ; mem[1][6] ; clk        ; clk      ; None                        ; None                      ; 8.869 ns                ;
+; N/A                                     ; 109.65 MHz ( period = 9.120 ns )                    ; keyseg[3] ; cislo6[6] ; clk        ; clk      ; None                        ; None                      ; 8.851 ns                ;
+; N/A                                     ; 109.66 MHz ( period = 9.119 ns )                    ; keyseg[3] ; cislo6[1] ; clk        ; clk      ; None                        ; None                      ; 8.850 ns                ;
+; N/A                                     ; 109.66 MHz ( period = 9.119 ns )                    ; keyseg[3] ; cislo6[2] ; clk        ; clk      ; None                        ; None                      ; 8.850 ns                ;
+; N/A                                     ; 109.70 MHz ( period = 9.116 ns )                    ; keyseg[3] ; cislo2[2] ; clk        ; clk      ; None                        ; None                      ; 8.847 ns                ;
+; N/A                                     ; 109.81 MHz ( period = 9.107 ns )                    ; keyseg[3] ; mem[2][3] ; clk        ; clk      ; None                        ; None                      ; 8.846 ns                ;
+; N/A                                     ; 109.85 MHz ( period = 9.103 ns )                    ; index[0]  ; mem[4][7] ; clk        ; clk      ; None                        ; None                      ; 8.841 ns                ;
+; N/A                                     ; 109.89 MHz ( period = 9.100 ns )                    ; keyseg[3] ; cislo6[4] ; clk        ; clk      ; None                        ; None                      ; 8.846 ns                ;
+; N/A                                     ; 109.93 MHz ( period = 9.097 ns )                    ; keyseg[0] ; cislo4[1] ; clk        ; clk      ; None                        ; None                      ; 8.829 ns                ;
+; N/A                                     ; 109.94 MHz ( period = 9.096 ns )                    ; index[0]  ; mem[5][6] ; clk        ; clk      ; None                        ; None                      ; 8.824 ns                ;
+; N/A                                     ; 109.99 MHz ( period = 9.092 ns )                    ; keyseg[3] ; mem[5][3] ; clk        ; clk      ; None                        ; None                      ; 8.827 ns                ;
+; N/A                                     ; 110.07 MHz ( period = 9.085 ns )                    ; keyseg[3] ; cislo0[6] ; clk        ; clk      ; None                        ; None                      ; 8.822 ns                ;
+; N/A                                     ; 110.14 MHz ( period = 9.079 ns )                    ; keyseg[1] ; mem[2][3] ; clk        ; clk      ; None                        ; None                      ; 8.818 ns                ;
+; N/A                                     ; 110.28 MHz ( period = 9.068 ns )                    ; keyseg[3] ; mem[0][6] ; clk        ; clk      ; None                        ; None                      ; 8.807 ns                ;
+; N/A                                     ; 110.31 MHz ( period = 9.065 ns )                    ; keyseg[0] ; cislo4[7] ; clk        ; clk      ; None                        ; None                      ; 8.802 ns                ;
+; N/A                                     ; 110.33 MHz ( period = 9.064 ns )                    ; keyseg[1] ; mem[5][3] ; clk        ; clk      ; None                        ; None                      ; 8.799 ns                ;
+; N/A                                     ; 110.50 MHz ( period = 9.050 ns )                    ; keyseg[3] ; mem[5][5] ; clk        ; clk      ; None                        ; None                      ; 8.785 ns                ;
+; N/A                                     ; 110.56 MHz ( period = 9.045 ns )                    ; index[2]  ; mem[2][3] ; clk        ; clk      ; None                        ; None                      ; 8.777 ns                ;
+; N/A                                     ; 110.62 MHz ( period = 9.040 ns )                    ; index[0]  ; mem[7][4] ; clk        ; clk      ; None                        ; None                      ; 8.766 ns                ;
+; N/A                                     ; 110.62 MHz ( period = 9.040 ns )                    ; keyseg[1] ; mem[0][6] ; clk        ; clk      ; None                        ; None                      ; 8.779 ns                ;
+; N/A                                     ; 110.72 MHz ( period = 9.032 ns )                    ; keyseg[3] ; cislo0[7] ; clk        ; clk      ; None                        ; None                      ; 8.769 ns                ;
+; N/A                                     ; 110.73 MHz ( period = 9.031 ns )                    ; keyseg[3] ; cislo0[3] ; clk        ; clk      ; None                        ; None                      ; 8.765 ns                ;
+; N/A                                     ; 110.74 MHz ( period = 9.030 ns )                    ; index[2]  ; mem[5][3] ; clk        ; clk      ; None                        ; None                      ; 8.758 ns                ;
+; N/A                                     ; 110.78 MHz ( period = 9.027 ns )                    ; keyseg[3] ; cislo0[5] ; clk        ; clk      ; None                        ; None                      ; 8.764 ns                ;
+; N/A                                     ; 110.84 MHz ( period = 9.022 ns )                    ; keyseg[1] ; mem[5][5] ; clk        ; clk      ; None                        ; None                      ; 8.757 ns                ;
+; N/A                                     ; 110.86 MHz ( period = 9.020 ns )                    ; index[0]  ; mem[7][6] ; clk        ; clk      ; None                        ; None                      ; 8.761 ns                ;
+; N/A                                     ; 110.91 MHz ( period = 9.016 ns )                    ; index[0]  ; mem[1][4] ; clk        ; clk      ; None                        ; None                      ; 8.761 ns                ;
+; N/A                                     ; 110.95 MHz ( period = 9.013 ns )                    ; index[0]  ; mem[1][5] ; clk        ; clk      ; None                        ; None                      ; 8.758 ns                ;
+; N/A                                     ; 110.96 MHz ( period = 9.012 ns )                    ; keyseg[3] ; mem[4][3] ; clk        ; clk      ; None                        ; None                      ; 8.762 ns                ;
+; N/A                                     ; 110.96 MHz ( period = 9.012 ns )                    ; keyseg[2] ; cislo4[4] ; clk        ; clk      ; None                        ; None                      ; 8.746 ns                ;
+; N/A                                     ; 111.02 MHz ( period = 9.007 ns )                    ; keyseg[3] ; cislo2[3] ; clk        ; clk      ; None                        ; None                      ; 8.753 ns                ;
+; N/A                                     ; 111.02 MHz ( period = 9.007 ns )                    ; keyseg[3] ; cislo2[7] ; clk        ; clk      ; None                        ; None                      ; 8.753 ns                ;
+; N/A                                     ; 111.04 MHz ( period = 9.006 ns )                    ; index[2]  ; mem[0][6] ; clk        ; clk      ; None                        ; None                      ; 8.738 ns                ;
+; N/A                                     ; 111.12 MHz ( period = 8.999 ns )                    ; keyseg[1] ; cislo0[2] ; clk        ; clk      ; None                        ; None                      ; 8.733 ns                ;
+; N/A                                     ; 111.20 MHz ( period = 8.993 ns )                    ; keyseg[3] ; cislo2[5] ; clk        ; clk      ; None                        ; None                      ; 8.739 ns                ;
+; N/A                                     ; 111.23 MHz ( period = 8.990 ns )                    ; keyseg[3] ; mem[5][4] ; clk        ; clk      ; None                        ; None                      ; 8.723 ns                ;
+; N/A                                     ; 111.26 MHz ( period = 8.988 ns )                    ; index[2]  ; mem[5][5] ; clk        ; clk      ; None                        ; None                      ; 8.716 ns                ;
+; N/A                                     ; 111.28 MHz ( period = 8.986 ns )                    ; index[0]  ; mem[7][5] ; clk        ; clk      ; None                        ; None                      ; 8.727 ns                ;
+; N/A                                     ; 111.31 MHz ( period = 8.984 ns )                    ; keyseg[1] ; mem[4][3] ; clk        ; clk      ; None                        ; None                      ; 8.734 ns                ;
+; N/A                                     ; 111.36 MHz ( period = 8.980 ns )                    ; keyseg[2] ; cislo2[6] ; clk        ; clk      ; None                        ; None                      ; 8.711 ns                ;
+; N/A                                     ; 111.43 MHz ( period = 8.974 ns )                    ; keyseg[3] ; cislo7[2] ; clk        ; clk      ; None                        ; None                      ; 8.708 ns                ;
+; N/A                                     ; 111.48 MHz ( period = 8.970 ns )                    ; index[0]  ; mem[3][3] ; clk        ; clk      ; None                        ; None                      ; 8.715 ns                ;
+; N/A                                     ; 111.53 MHz ( period = 8.966 ns )                    ; keyseg[3] ; mem[3][1] ; clk        ; clk      ; None                        ; None                      ; 8.709 ns                ;
+; N/A                                     ; 111.53 MHz ( period = 8.966 ns )                    ; keyseg[3] ; mem[3][7] ; clk        ; clk      ; None                        ; None                      ; 8.709 ns                ;
+; N/A                                     ; 111.56 MHz ( period = 8.964 ns )                    ; keyseg[3] ; cislo3[2] ; clk        ; clk      ; None                        ; None                      ; 8.698 ns                ;
+; N/A                                     ; 111.58 MHz ( period = 8.962 ns )                    ; keyseg[1] ; mem[5][4] ; clk        ; clk      ; None                        ; None                      ; 8.695 ns                ;
+; N/A                                     ; 111.64 MHz ( period = 8.957 ns )                    ; keyseg[3] ; cislo3[7] ; clk        ; clk      ; None                        ; None                      ; 8.691 ns                ;
+; N/A                                     ; 111.68 MHz ( period = 8.954 ns )                    ; keyseg[1] ; cislo6[6] ; clk        ; clk      ; None                        ; None                      ; 8.685 ns                ;
+; N/A                                     ; 111.69 MHz ( period = 8.953 ns )                    ; keyseg[2] ; cislo2[1] ; clk        ; clk      ; None                        ; None                      ; 8.684 ns                ;
+; N/A                                     ; 111.69 MHz ( period = 8.953 ns )                    ; keyseg[1] ; cislo6[1] ; clk        ; clk      ; None                        ; None                      ; 8.684 ns                ;
+; N/A                                     ; 111.69 MHz ( period = 8.953 ns )                    ; keyseg[1] ; cislo6[2] ; clk        ; clk      ; None                        ; None                      ; 8.684 ns                ;
+; N/A                                     ; 111.71 MHz ( period = 8.952 ns )                    ; index[0]  ; mem[1][2] ; clk        ; clk      ; None                        ; None                      ; 8.692 ns                ;
+; N/A                                     ; 111.73 MHz ( period = 8.950 ns )                    ; keyseg[1] ; cislo2[2] ; clk        ; clk      ; None                        ; None                      ; 8.681 ns                ;
+; N/A                                     ; 111.73 MHz ( period = 8.950 ns )                    ; index[2]  ; mem[4][3] ; clk        ; clk      ; None                        ; None                      ; 8.693 ns                ;
+; N/A                                     ; 111.77 MHz ( period = 8.947 ns )                    ; index[1]  ; mem[1][6] ; clk        ; clk      ; None                        ; None                      ; 8.692 ns                ;
+; N/A                                     ; 111.88 MHz ( period = 8.938 ns )                    ; keyseg[1] ; mem[3][1] ; clk        ; clk      ; None                        ; None                      ; 8.681 ns                ;
+; N/A                                     ; 111.88 MHz ( period = 8.938 ns )                    ; keyseg[1] ; mem[3][7] ; clk        ; clk      ; None                        ; None                      ; 8.681 ns                ;
+; N/A                                     ; 111.93 MHz ( period = 8.934 ns )                    ; keyseg[1] ; cislo6[4] ; clk        ; clk      ; None                        ; None                      ; 8.680 ns                ;
+; N/A                                     ; 112.01 MHz ( period = 8.928 ns )                    ; index[2]  ; mem[5][4] ; clk        ; clk      ; None                        ; None                      ; 8.654 ns                ;
+; N/A                                     ; 112.07 MHz ( period = 8.923 ns )                    ; index[0]  ; mem[1][1] ; clk        ; clk      ; None                        ; None                      ; 8.663 ns                ;
+; N/A                                     ; 112.10 MHz ( period = 8.921 ns )                    ; keyseg[2] ; cislo4[1] ; clk        ; clk      ; None                        ; None                      ; 8.653 ns                ;
+; N/A                                     ; 112.12 MHz ( period = 8.919 ns )                    ; keyseg[1] ; cislo0[6] ; clk        ; clk      ; None                        ; None                      ; 8.656 ns                ;
+; N/A                                     ; 112.15 MHz ( period = 8.917 ns )                    ; keyseg[2] ; mem[2][4] ; clk        ; clk      ; None                        ; None                      ; 8.650 ns                ;
+; N/A                                     ; 112.18 MHz ( period = 8.914 ns )                    ; keyseg[3] ; cislo1[5] ; clk        ; clk      ; None                        ; None                      ; 8.649 ns                ;
+; N/A                                     ; 112.20 MHz ( period = 8.913 ns )                    ; keyseg[2] ; mem[2][6] ; clk        ; clk      ; None                        ; None                      ; 8.652 ns                ;
+; N/A                                     ; 112.27 MHz ( period = 8.907 ns )                    ; keyseg[3] ; cislo5[5] ; clk        ; clk      ; None                        ; None                      ; 8.637 ns                ;
+; N/A                                     ; 112.31 MHz ( period = 8.904 ns )                    ; index[2]  ; mem[3][1] ; clk        ; clk      ; None                        ; None                      ; 8.640 ns                ;
+; N/A                                     ; 112.31 MHz ( period = 8.904 ns )                    ; index[2]  ; mem[3][7] ; clk        ; clk      ; None                        ; None                      ; 8.640 ns                ;
+; N/A                                     ; 112.35 MHz ( period = 8.901 ns )                    ; index[0]  ; mem[2][1] ; clk        ; clk      ; None                        ; None                      ; 8.633 ns                ;
+; N/A                                     ; 112.40 MHz ( period = 8.897 ns )                    ; keyseg[2] ; mem[2][2] ; clk        ; clk      ; None                        ; None                      ; 8.651 ns                ;
+; N/A                                     ; 112.47 MHz ( period = 8.891 ns )                    ; keyseg[2] ; mem[2][5] ; clk        ; clk      ; None                        ; None                      ; 8.645 ns                ;
+; N/A                                     ; 112.50 MHz ( period = 8.889 ns )                    ; keyseg[2] ; cislo4[7] ; clk        ; clk      ; None                        ; None                      ; 8.626 ns                ;
+; N/A                                     ; 112.51 MHz ( period = 8.888 ns )                    ; keyseg[3] ; cislo1[4] ; clk        ; clk      ; None                        ; None                      ; 8.617 ns                ;
+; N/A                                     ; 112.54 MHz ( period = 8.886 ns )                    ; keyseg[0] ; cislo0[2] ; clk        ; clk      ; None                        ; None                      ; 8.620 ns                ;
+; N/A                                     ; 112.55 MHz ( period = 8.885 ns )                    ; keyseg[3] ; mem[4][7] ; clk        ; clk      ; None                        ; None                      ; 8.630 ns                ;
+; N/A                                     ; 112.60 MHz ( period = 8.881 ns )                    ; index[0]  ; mem[5][2] ; clk        ; clk      ; None                        ; None                      ; 8.607 ns                ;
+; N/A                                     ; 112.64 MHz ( period = 8.878 ns )                    ; keyseg[3] ; mem[5][6] ; clk        ; clk      ; None                        ; None                      ; 8.613 ns                ;
+; N/A                                     ; 112.76 MHz ( period = 8.868 ns )                    ; index[1]  ; mem[2][3] ; clk        ; clk      ; None                        ; None                      ; 8.600 ns                ;
+; N/A                                     ; 112.79 MHz ( period = 8.866 ns )                    ; keyseg[1] ; cislo0[7] ; clk        ; clk      ; None                        ; None                      ; 8.603 ns                ;
+; N/A                                     ; 112.80 MHz ( period = 8.865 ns )                    ; keyseg[1] ; cislo0[3] ; clk        ; clk      ; None                        ; None                      ; 8.599 ns                ;
+; N/A                                     ; 112.85 MHz ( period = 8.861 ns )                    ; keyseg[1] ; cislo0[5] ; clk        ; clk      ; None                        ; None                      ; 8.598 ns                ;
+; N/A                                     ; 112.91 MHz ( period = 8.857 ns )                    ; keyseg[1] ; mem[4][7] ; clk        ; clk      ; None                        ; None                      ; 8.602 ns                ;
+; N/A                                     ; 112.96 MHz ( period = 8.853 ns )                    ; index[1]  ; mem[5][3] ; clk        ; clk      ; None                        ; None                      ; 8.581 ns                ;
+; N/A                                     ; 112.99 MHz ( period = 8.850 ns )                    ; keyseg[1] ; mem[5][6] ; clk        ; clk      ; None                        ; None                      ; 8.585 ns                ;
+; N/A                                     ; 113.03 MHz ( period = 8.847 ns )                    ; keyseg[0] ; mem[1][6] ; clk        ; clk      ; None                        ; None                      ; 8.599 ns                ;
+; N/A                                     ; 113.11 MHz ( period = 8.841 ns )                    ; keyseg[1] ; cislo2[3] ; clk        ; clk      ; None                        ; None                      ; 8.587 ns                ;
+; N/A                                     ; 113.11 MHz ( period = 8.841 ns )                    ; keyseg[0] ; cislo6[6] ; clk        ; clk      ; None                        ; None                      ; 8.572 ns                ;
+; N/A                                     ; 113.11 MHz ( period = 8.841 ns )                    ; keyseg[1] ; cislo2[7] ; clk        ; clk      ; None                        ; None                      ; 8.587 ns                ;
+; N/A                                     ; 113.12 MHz ( period = 8.840 ns )                    ; keyseg[0] ; cislo6[1] ; clk        ; clk      ; None                        ; None                      ; 8.571 ns                ;
+; N/A                                     ; 113.12 MHz ( period = 8.840 ns )                    ; keyseg[0] ; cislo6[2] ; clk        ; clk      ; None                        ; None                      ; 8.571 ns                ;
+; N/A                                     ; 113.16 MHz ( period = 8.837 ns )                    ; keyseg[0] ; cislo2[2] ; clk        ; clk      ; None                        ; None                      ; 8.568 ns                ;
+; N/A                                     ; 113.26 MHz ( period = 8.829 ns )                    ; index[1]  ; mem[0][6] ; clk        ; clk      ; None                        ; None                      ; 8.561 ns                ;
+; N/A                                     ; 113.29 MHz ( period = 8.827 ns )                    ; keyseg[1] ; cislo2[5] ; clk        ; clk      ; None                        ; None                      ; 8.573 ns                ;
+; N/A                                     ; 113.34 MHz ( period = 8.823 ns )                    ; index[2]  ; mem[4][7] ; clk        ; clk      ; None                        ; None                      ; 8.561 ns                ;
+; N/A                                     ; 113.35 MHz ( period = 8.822 ns )                    ; keyseg[3] ; mem[7][4] ; clk        ; clk      ; None                        ; None                      ; 8.555 ns                ;
+; N/A                                     ; 113.37 MHz ( period = 8.821 ns )                    ; keyseg[0] ; cislo6[4] ; clk        ; clk      ; None                        ; None                      ; 8.567 ns                ;
+; N/A                                     ; 113.42 MHz ( period = 8.817 ns )                    ; keyseg[1] ; cislo7[2] ; clk        ; clk      ; None                        ; None                      ; 8.551 ns                ;
+; N/A                                     ; 113.43 MHz ( period = 8.816 ns )                    ; index[2]  ; mem[5][6] ; clk        ; clk      ; None                        ; None                      ; 8.544 ns                ;
+; N/A                                     ; 113.49 MHz ( period = 8.811 ns )                    ; keyseg[3] ; cislo7[4] ; clk        ; clk      ; None                        ; None                      ; 8.534 ns                ;
+; N/A                                     ; 113.49 MHz ( period = 8.811 ns )                    ; index[1]  ; mem[5][5] ; clk        ; clk      ; None                        ; None                      ; 8.539 ns                ;
+; N/A                                     ; 113.55 MHz ( period = 8.807 ns )                    ; keyseg[1] ; cislo3[2] ; clk        ; clk      ; None                        ; None                      ; 8.541 ns                ;
+; N/A                                     ; 113.56 MHz ( period = 8.806 ns )                    ; keyseg[0] ; cislo0[6] ; clk        ; clk      ; None                        ; None                      ; 8.543 ns                ;
+; N/A                                     ; 113.61 MHz ( period = 8.802 ns )                    ; keyseg[3] ; mem[7][6] ; clk        ; clk      ; None                        ; None                      ; 8.550 ns                ;
+; N/A                                     ; 113.64 MHz ( period = 8.800 ns )                    ; keyseg[1] ; cislo3[7] ; clk        ; clk      ; None                        ; None                      ; 8.534 ns                ;
+; N/A                                     ; 113.66 MHz ( period = 8.798 ns )                    ; keyseg[3] ; mem[1][4] ; clk        ; clk      ; None                        ; None                      ; 8.550 ns                ;
+; N/A                                     ; 113.70 MHz ( period = 8.795 ns )                    ; keyseg[3] ; mem[1][5] ; clk        ; clk      ; None                        ; None                      ; 8.547 ns                ;
+; N/A                                     ; 113.71 MHz ( period = 8.794 ns )                    ; keyseg[1] ; mem[7][4] ; clk        ; clk      ; None                        ; None                      ; 8.527 ns                ;
+; N/A                                     ; 113.90 MHz ( period = 8.780 ns )                    ; index[0]  ; mem[2][7] ; clk        ; clk      ; None                        ; None                      ; 8.512 ns                ;
+; N/A                                     ; 113.97 MHz ( period = 8.774 ns )                    ; keyseg[1] ; mem[7][6] ; clk        ; clk      ; None                        ; None                      ; 8.522 ns                ;
+; N/A                                     ; 113.99 MHz ( period = 8.773 ns )                    ; index[1]  ; mem[4][3] ; clk        ; clk      ; None                        ; None                      ; 8.516 ns                ;
+; N/A                                     ; 114.03 MHz ( period = 8.770 ns )                    ; keyseg[1] ; mem[1][4] ; clk        ; clk      ; None                        ; None                      ; 8.522 ns                ;
+; N/A                                     ; 114.05 MHz ( period = 8.768 ns )                    ; keyseg[0] ; mem[2][3] ; clk        ; clk      ; None                        ; None                      ; 8.507 ns                ;
+; N/A                                     ; 114.05 MHz ( period = 8.768 ns )                    ; keyseg[3] ; mem[7][5] ; clk        ; clk      ; None                        ; None                      ; 8.516 ns                ;
+; N/A                                     ; 114.06 MHz ( period = 8.767 ns )                    ; keyseg[1] ; mem[1][5] ; clk        ; clk      ; None                        ; None                      ; 8.519 ns                ;
+; N/A                                     ; 114.16 MHz ( period = 8.760 ns )                    ; index[2]  ; mem[7][4] ; clk        ; clk      ; None                        ; None                      ; 8.486 ns                ;
+; N/A                                     ; 114.19 MHz ( period = 8.757 ns )                    ; keyseg[1] ; cislo1[5] ; clk        ; clk      ; None                        ; None                      ; 8.492 ns                ;
+; N/A                                     ; 114.25 MHz ( period = 8.753 ns )                    ; keyseg[0] ; mem[5][3] ; clk        ; clk      ; None                        ; None                      ; 8.488 ns                ;
+; N/A                                     ; 114.25 MHz ( period = 8.753 ns )                    ; keyseg[0] ; cislo0[7] ; clk        ; clk      ; None                        ; None                      ; 8.490 ns                ;
+; N/A                                     ; 114.26 MHz ( period = 8.752 ns )                    ; keyseg[3] ; mem[3][3] ; clk        ; clk      ; None                        ; None                      ; 8.504 ns                ;
+; N/A                                     ; 114.26 MHz ( period = 8.752 ns )                    ; keyseg[0] ; cislo0[3] ; clk        ; clk      ; None                        ; None                      ; 8.486 ns                ;
+; N/A                                     ; 114.27 MHz ( period = 8.751 ns )                    ; index[1]  ; mem[5][4] ; clk        ; clk      ; None                        ; None                      ; 8.477 ns                ;
+; N/A                                     ; 114.29 MHz ( period = 8.750 ns )                    ; keyseg[1] ; cislo5[5] ; clk        ; clk      ; None                        ; None                      ; 8.480 ns                ;
+; N/A                                     ; 114.31 MHz ( period = 8.748 ns )                    ; keyseg[0] ; cislo0[5] ; clk        ; clk      ; None                        ; None                      ; 8.485 ns                ;
+; N/A                                     ; 114.42 MHz ( period = 8.740 ns )                    ; keyseg[1] ; mem[7][5] ; clk        ; clk      ; None                        ; None                      ; 8.488 ns                ;
+; N/A                                     ; 114.42 MHz ( period = 8.740 ns )                    ; index[2]  ; mem[7][6] ; clk        ; clk      ; None                        ; None                      ; 8.481 ns                ;
+; N/A                                     ; 114.44 MHz ( period = 8.738 ns )                    ; keyseg[3] ; cislo2[4] ; clk        ; clk      ; None                        ; None                      ; 8.484 ns                ;
+; N/A                                     ; 114.47 MHz ( period = 8.736 ns )                    ; index[2]  ; mem[1][4] ; clk        ; clk      ; None                        ; None                      ; 8.481 ns                ;
+; N/A                                     ; 114.50 MHz ( period = 8.734 ns )                    ; keyseg[3] ; mem[1][2] ; clk        ; clk      ; None                        ; None                      ; 8.481 ns                ;
+; N/A                                     ; 114.50 MHz ( period = 8.734 ns )                    ; keyseg[3] ; cislo6[3] ; clk        ; clk      ; None                        ; None                      ; 8.480 ns                ;
+; N/A                                     ; 114.50 MHz ( period = 8.734 ns )                    ; keyseg[3] ; cislo6[5] ; clk        ; clk      ; None                        ; None                      ; 8.480 ns                ;
+; N/A                                     ; 114.50 MHz ( period = 8.734 ns )                    ; index[1]  ; cislo4[6] ; clk        ; clk      ; None                        ; None                      ; 8.464 ns                ;
+; N/A                                     ; 114.51 MHz ( period = 8.733 ns )                    ; index[2]  ; mem[1][5] ; clk        ; clk      ; None                        ; None                      ; 8.478 ns                ;
+; N/A                                     ; 114.53 MHz ( period = 8.731 ns )                    ; keyseg[1] ; cislo1[4] ; clk        ; clk      ; None                        ; None                      ; 8.460 ns                ;
+; N/A                                     ; 114.56 MHz ( period = 8.729 ns )                    ; keyseg[0] ; mem[0][6] ; clk        ; clk      ; None                        ; None                      ; 8.468 ns                ;
+; N/A                                     ; 114.57 MHz ( period = 8.728 ns )                    ; keyseg[0] ; cislo2[3] ; clk        ; clk      ; None                        ; None                      ; 8.474 ns                ;
+; N/A                                     ; 114.57 MHz ( period = 8.728 ns )                    ; keyseg[0] ; cislo2[7] ; clk        ; clk      ; None                        ; None                      ; 8.474 ns                ;
+; N/A                                     ; 114.59 MHz ( period = 8.727 ns )                    ; index[1]  ; mem[3][1] ; clk        ; clk      ; None                        ; None                      ; 8.463 ns                ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;           ;           ;            ;          ;                             ;                           ;                         ;
++-----------------------------------------+-----------------------------------------------------+-----------+-----------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; tsu                                                                                                                                               ;
++-----------------------------------------+-----------------------------------------------------+------------+---------------+-----------+----------+
+; Slack                                   ; Required tsu                                        ; Actual tsu ; From          ; To        ; To Clock ;
++-----------------------------------------+-----------------------------------------------------+------------+---------------+-----------+----------+
+; N/A                                     ; None                                                ; 12.806 ns  ; keyboardread2 ; cislo4[5] ; clk      ;
+; N/A                                     ; None                                                ; 12.704 ns  ; keyboardread3 ; cislo4[5] ; clk      ;
+; N/A                                     ; None                                                ; 12.558 ns  ; keyboardread0 ; cislo4[5] ; clk      ;
+; N/A                                     ; None                                                ; 12.368 ns  ; keyboardread1 ; cislo4[5] ; clk      ;
+; N/A                                     ; None                                                ; 12.026 ns  ; keyboardread2 ; cislo4[6] ; clk      ;
+; N/A                                     ; None                                                ; 11.995 ns  ; keyboardread2 ; cislo4[2] ; clk      ;
+; N/A                                     ; None                                                ; 11.937 ns  ; keyboardread2 ; mem[2][4] ; clk      ;
+; N/A                                     ; None                                                ; 11.933 ns  ; keyboardread2 ; mem[2][6] ; clk      ;
+; N/A                                     ; None                                                ; 11.924 ns  ; keyboardread3 ; cislo4[6] ; clk      ;
+; N/A                                     ; None                                                ; 11.917 ns  ; keyboardread2 ; mem[2][2] ; clk      ;
+; N/A                                     ; None                                                ; 11.911 ns  ; keyboardread2 ; mem[2][5] ; clk      ;
+; N/A                                     ; None                                                ; 11.893 ns  ; keyboardread3 ; cislo4[2] ; clk      ;
+; N/A                                     ; None                                                ; 11.835 ns  ; keyboardread3 ; mem[2][4] ; clk      ;
+; N/A                                     ; None                                                ; 11.831 ns  ; keyboardread3 ; mem[2][6] ; clk      ;
+; N/A                                     ; None                                                ; 11.815 ns  ; keyboardread3 ; mem[2][2] ; clk      ;
+; N/A                                     ; None                                                ; 11.809 ns  ; keyboardread3 ; mem[2][5] ; clk      ;
+; N/A                                     ; None                                                ; 11.778 ns  ; keyboardread0 ; cislo4[6] ; clk      ;
+; N/A                                     ; None                                                ; 11.747 ns  ; keyboardread0 ; cislo4[2] ; clk      ;
+; N/A                                     ; None                                                ; 11.739 ns  ; keyboardread2 ; cislo4[4] ; clk      ;
+; N/A                                     ; None                                                ; 11.707 ns  ; keyboardread2 ; cislo2[6] ; clk      ;
+; N/A                                     ; None                                                ; 11.689 ns  ; keyboardread0 ; mem[2][4] ; clk      ;
+; N/A                                     ; None                                                ; 11.685 ns  ; keyboardread0 ; mem[2][6] ; clk      ;
+; N/A                                     ; None                                                ; 11.680 ns  ; keyboardread2 ; cislo2[1] ; clk      ;
+; N/A                                     ; None                                                ; 11.669 ns  ; keyboardread0 ; mem[2][2] ; clk      ;
+; N/A                                     ; None                                                ; 11.663 ns  ; keyboardread0 ; mem[2][5] ; clk      ;
+; N/A                                     ; None                                                ; 11.648 ns  ; keyboardread2 ; cislo4[1] ; clk      ;
+; N/A                                     ; None                                                ; 11.637 ns  ; keyboardread3 ; cislo4[4] ; clk      ;
+; N/A                                     ; None                                                ; 11.616 ns  ; keyboardread2 ; cislo4[7] ; clk      ;
+; N/A                                     ; None                                                ; 11.605 ns  ; keyboardread3 ; cislo2[6] ; clk      ;
+; N/A                                     ; None                                                ; 11.588 ns  ; keyboardread1 ; cislo4[6] ; clk      ;
+; N/A                                     ; None                                                ; 11.588 ns  ; keyboardread2 ; mem[1][6] ; clk      ;
+; N/A                                     ; None                                                ; 11.578 ns  ; keyboardread3 ; cislo2[1] ; clk      ;
+; N/A                                     ; None                                                ; 11.557 ns  ; keyboardread1 ; cislo4[2] ; clk      ;
+; N/A                                     ; None                                                ; 11.546 ns  ; keyboardread3 ; cislo4[1] ; clk      ;
+; N/A                                     ; None                                                ; 11.514 ns  ; keyboardread3 ; cislo4[7] ; clk      ;
+; N/A                                     ; None                                                ; 11.509 ns  ; keyboardread2 ; mem[2][3] ; clk      ;
+; N/A                                     ; None                                                ; 11.499 ns  ; keyboardread1 ; mem[2][4] ; clk      ;
+; N/A                                     ; None                                                ; 11.495 ns  ; keyboardread1 ; mem[2][6] ; clk      ;
+; N/A                                     ; None                                                ; 11.494 ns  ; keyboardread2 ; mem[5][3] ; clk      ;
+; N/A                                     ; None                                                ; 11.491 ns  ; keyboardread0 ; cislo4[4] ; clk      ;
+; N/A                                     ; None                                                ; 11.486 ns  ; keyboardread3 ; mem[1][6] ; clk      ;
+; N/A                                     ; None                                                ; 11.479 ns  ; keyboardread1 ; mem[2][2] ; clk      ;
+; N/A                                     ; None                                                ; 11.473 ns  ; keyboardread1 ; mem[2][5] ; clk      ;
+; N/A                                     ; None                                                ; 11.470 ns  ; keyboardread2 ; mem[0][6] ; clk      ;
+; N/A                                     ; None                                                ; 11.459 ns  ; keyboardread0 ; cislo2[6] ; clk      ;
+; N/A                                     ; None                                                ; 11.452 ns  ; keyboardread2 ; mem[5][5] ; clk      ;
+; N/A                                     ; None                                                ; 11.437 ns  ; keyboardread2 ; cislo0[2] ; clk      ;
+; N/A                                     ; None                                                ; 11.432 ns  ; keyboardread0 ; cislo2[1] ; clk      ;
+; N/A                                     ; None                                                ; 11.414 ns  ; keyboardread2 ; mem[4][3] ; clk      ;
+; N/A                                     ; None                                                ; 11.407 ns  ; keyboardread3 ; mem[2][3] ; clk      ;
+; N/A                                     ; None                                                ; 11.400 ns  ; keyboardread0 ; cislo4[1] ; clk      ;
+; N/A                                     ; None                                                ; 11.392 ns  ; keyboardread2 ; mem[5][4] ; clk      ;
+; N/A                                     ; None                                                ; 11.392 ns  ; keyboardread2 ; cislo6[6] ; clk      ;
+; N/A                                     ; None                                                ; 11.392 ns  ; keyboardread3 ; mem[5][3] ; clk      ;
+; N/A                                     ; None                                                ; 11.391 ns  ; keyboardread2 ; cislo6[1] ; clk      ;
+; N/A                                     ; None                                                ; 11.391 ns  ; keyboardread2 ; cislo6[2] ; clk      ;
+; N/A                                     ; None                                                ; 11.388 ns  ; keyboardread2 ; cislo2[2] ; clk      ;
+; N/A                                     ; None                                                ; 11.372 ns  ; keyboardread2 ; cislo6[4] ; clk      ;
+; N/A                                     ; None                                                ; 11.368 ns  ; keyboardread2 ; mem[3][1] ; clk      ;
+; N/A                                     ; None                                                ; 11.368 ns  ; keyboardread2 ; mem[3][7] ; clk      ;
+; N/A                                     ; None                                                ; 11.368 ns  ; keyboardread3 ; mem[0][6] ; clk      ;
+; N/A                                     ; None                                                ; 11.368 ns  ; keyboardread0 ; cislo4[7] ; clk      ;
+; N/A                                     ; None                                                ; 11.357 ns  ; keyboardread2 ; cislo0[6] ; clk      ;
+; N/A                                     ; None                                                ; 11.350 ns  ; keyboardread3 ; mem[5][5] ; clk      ;
+; N/A                                     ; None                                                ; 11.340 ns  ; keyboardread0 ; mem[1][6] ; clk      ;
+; N/A                                     ; None                                                ; 11.335 ns  ; keyboardread3 ; cislo0[2] ; clk      ;
+; N/A                                     ; None                                                ; 11.312 ns  ; keyboardread3 ; mem[4][3] ; clk      ;
+; N/A                                     ; None                                                ; 11.304 ns  ; keyboardread2 ; cislo0[7] ; clk      ;
+; N/A                                     ; None                                                ; 11.303 ns  ; keyboardread2 ; cislo0[3] ; clk      ;
+; N/A                                     ; None                                                ; 11.301 ns  ; keyboardread1 ; cislo4[4] ; clk      ;
+; N/A                                     ; None                                                ; 11.299 ns  ; keyboardread2 ; cislo0[5] ; clk      ;
+; N/A                                     ; None                                                ; 11.290 ns  ; keyboardread3 ; mem[5][4] ; clk      ;
+; N/A                                     ; None                                                ; 11.290 ns  ; keyboardread3 ; cislo6[6] ; clk      ;
+; N/A                                     ; None                                                ; 11.289 ns  ; keyboardread3 ; cislo6[1] ; clk      ;
+; N/A                                     ; None                                                ; 11.289 ns  ; keyboardread3 ; cislo6[2] ; clk      ;
+; N/A                                     ; None                                                ; 11.287 ns  ; keyboardread2 ; mem[4][7] ; clk      ;
+; N/A                                     ; None                                                ; 11.286 ns  ; keyboardread3 ; cislo2[2] ; clk      ;
+; N/A                                     ; None                                                ; 11.280 ns  ; keyboardread2 ; mem[5][6] ; clk      ;
+; N/A                                     ; None                                                ; 11.279 ns  ; keyboardread2 ; cislo2[3] ; clk      ;
+; N/A                                     ; None                                                ; 11.279 ns  ; keyboardread2 ; cislo2[7] ; clk      ;
+; N/A                                     ; None                                                ; 11.270 ns  ; keyboardread3 ; cislo6[4] ; clk      ;
+; N/A                                     ; None                                                ; 11.269 ns  ; keyboardread1 ; cislo2[6] ; clk      ;
+; N/A                                     ; None                                                ; 11.266 ns  ; keyboardread3 ; mem[3][1] ; clk      ;
+; N/A                                     ; None                                                ; 11.266 ns  ; keyboardread3 ; mem[3][7] ; clk      ;
+; N/A                                     ; None                                                ; 11.265 ns  ; keyboardread2 ; cislo2[5] ; clk      ;
+; N/A                                     ; None                                                ; 11.261 ns  ; keyboardread0 ; mem[2][3] ; clk      ;
+; N/A                                     ; None                                                ; 11.255 ns  ; keyboardread3 ; cislo0[6] ; clk      ;
+; N/A                                     ; None                                                ; 11.252 ns  ; keyboardread2 ; cislo7[2] ; clk      ;
+; N/A                                     ; None                                                ; 11.246 ns  ; keyboardread0 ; mem[5][3] ; clk      ;
+; N/A                                     ; None                                                ; 11.242 ns  ; keyboardread1 ; cislo2[1] ; clk      ;
+; N/A                                     ; None                                                ; 11.242 ns  ; keyboardread2 ; cislo3[2] ; clk      ;
+; N/A                                     ; None                                                ; 11.235 ns  ; keyboardread2 ; cislo3[7] ; clk      ;
+; N/A                                     ; None                                                ; 11.224 ns  ; keyboardread2 ; mem[7][4] ; clk      ;
+; N/A                                     ; None                                                ; 11.222 ns  ; keyboardread0 ; mem[0][6] ; clk      ;
+; N/A                                     ; None                                                ; 11.210 ns  ; keyboardread1 ; cislo4[1] ; clk      ;
+; N/A                                     ; None                                                ; 11.204 ns  ; keyboardread2 ; mem[7][6] ; clk      ;
+; N/A                                     ; None                                                ; 11.204 ns  ; keyboardread0 ; mem[5][5] ; clk      ;
+; N/A                                     ; None                                                ; 11.202 ns  ; keyboardread3 ; cislo0[7] ; clk      ;
+; N/A                                     ; None                                                ; 11.201 ns  ; keyboardread3 ; cislo0[3] ; clk      ;
+; N/A                                     ; None                                                ; 11.200 ns  ; keyboardread2 ; mem[1][4] ; clk      ;
+; N/A                                     ; None                                                ; 11.197 ns  ; keyboardread2 ; mem[1][5] ; clk      ;
+; N/A                                     ; None                                                ; 11.197 ns  ; keyboardread3 ; cislo0[5] ; clk      ;
+; N/A                                     ; None                                                ; 11.192 ns  ; keyboardread2 ; cislo1[5] ; clk      ;
+; N/A                                     ; None                                                ; 11.189 ns  ; keyboardread0 ; cislo0[2] ; clk      ;
+; N/A                                     ; None                                                ; 11.185 ns  ; keyboardread2 ; cislo5[5] ; clk      ;
+; N/A                                     ; None                                                ; 11.185 ns  ; keyboardread3 ; mem[4][7] ; clk      ;
+; N/A                                     ; None                                                ; 11.178 ns  ; keyboardread1 ; cislo4[7] ; clk      ;
+; N/A                                     ; None                                                ; 11.178 ns  ; keyboardread3 ; mem[5][6] ; clk      ;
+; N/A                                     ; None                                                ; 11.177 ns  ; keyboardread3 ; cislo2[3] ; clk      ;
+; N/A                                     ; None                                                ; 11.177 ns  ; keyboardread3 ; cislo2[7] ; clk      ;
+; N/A                                     ; None                                                ; 11.170 ns  ; keyboardread2 ; mem[7][5] ; clk      ;
+; N/A                                     ; None                                                ; 11.166 ns  ; keyboardread2 ; cislo1[4] ; clk      ;
+; N/A                                     ; None                                                ; 11.166 ns  ; keyboardread0 ; mem[4][3] ; clk      ;
+; N/A                                     ; None                                                ; 11.163 ns  ; keyboardread3 ; cislo2[5] ; clk      ;
+; N/A                                     ; None                                                ; 11.154 ns  ; keyboardread2 ; mem[3][3] ; clk      ;
+; N/A                                     ; None                                                ; 11.150 ns  ; keyboardread1 ; mem[1][6] ; clk      ;
+; N/A                                     ; None                                                ; 11.150 ns  ; keyboardread3 ; cislo7[2] ; clk      ;
+; N/A                                     ; None                                                ; 11.144 ns  ; keyboardread0 ; mem[5][4] ; clk      ;
+; N/A                                     ; None                                                ; 11.144 ns  ; keyboardread0 ; cislo6[6] ; clk      ;
+; N/A                                     ; None                                                ; 11.143 ns  ; keyboardread0 ; cislo6[1] ; clk      ;
+; N/A                                     ; None                                                ; 11.143 ns  ; keyboardread0 ; cislo6[2] ; clk      ;
+; N/A                                     ; None                                                ; 11.140 ns  ; keyboardread3 ; cislo3[2] ; clk      ;
+; N/A                                     ; None                                                ; 11.140 ns  ; keyboardread0 ; cislo2[2] ; clk      ;
+; N/A                                     ; None                                                ; 11.136 ns  ; keyboardread2 ; mem[1][2] ; clk      ;
+; N/A                                     ; None                                                ; 11.133 ns  ; keyboardread3 ; cislo3[7] ; clk      ;
+; N/A                                     ; None                                                ; 11.124 ns  ; keyboardread0 ; cislo6[4] ; clk      ;
+; N/A                                     ; None                                                ; 11.122 ns  ; keyboardread3 ; mem[7][4] ; clk      ;
+; N/A                                     ; None                                                ; 11.120 ns  ; keyboardread0 ; mem[3][1] ; clk      ;
+; N/A                                     ; None                                                ; 11.120 ns  ; keyboardread0 ; mem[3][7] ; clk      ;
+; N/A                                     ; None                                                ; 11.109 ns  ; keyboardread0 ; cislo0[6] ; clk      ;
+; N/A                                     ; None                                                ; 11.107 ns  ; keyboardread2 ; mem[1][1] ; clk      ;
+; N/A                                     ; None                                                ; 11.102 ns  ; keyboardread3 ; mem[7][6] ; clk      ;
+; N/A                                     ; None                                                ; 11.098 ns  ; keyboardread3 ; mem[1][4] ; clk      ;
+; N/A                                     ; None                                                ; 11.095 ns  ; keyboardread3 ; mem[1][5] ; clk      ;
+; N/A                                     ; None                                                ; 11.090 ns  ; keyboardread3 ; cislo1[5] ; clk      ;
+; N/A                                     ; None                                                ; 11.089 ns  ; keyboardread2 ; cislo7[4] ; clk      ;
+; N/A                                     ; None                                                ; 11.085 ns  ; keyboardread2 ; mem[2][1] ; clk      ;
+; N/A                                     ; None                                                ; 11.083 ns  ; keyboardread3 ; cislo5[5] ; clk      ;
+; N/A                                     ; None                                                ; 11.071 ns  ; keyboardread1 ; mem[2][3] ; clk      ;
+; N/A                                     ; None                                                ; 11.068 ns  ; keyboardread3 ; mem[7][5] ; clk      ;
+; N/A                                     ; None                                                ; 11.065 ns  ; keyboardread2 ; mem[5][2] ; clk      ;
+; N/A                                     ; None                                                ; 11.064 ns  ; keyboardread3 ; cislo1[4] ; clk      ;
+; N/A                                     ; None                                                ; 11.056 ns  ; keyboardread1 ; mem[5][3] ; clk      ;
+; N/A                                     ; None                                                ; 11.056 ns  ; keyboardread0 ; cislo0[7] ; clk      ;
+; N/A                                     ; None                                                ; 11.055 ns  ; keyboardread0 ; cislo0[3] ; clk      ;
+; N/A                                     ; None                                                ; 11.052 ns  ; keyboardread3 ; mem[3][3] ; clk      ;
+; N/A                                     ; None                                                ; 11.051 ns  ; keyboardread0 ; cislo0[5] ; clk      ;
+; N/A                                     ; None                                                ; 11.039 ns  ; keyboardread0 ; mem[4][7] ; clk      ;
+; N/A                                     ; None                                                ; 11.034 ns  ; keyboardread3 ; mem[1][2] ; clk      ;
+; N/A                                     ; None                                                ; 11.032 ns  ; keyboardread1 ; mem[0][6] ; clk      ;
+; N/A                                     ; None                                                ; 11.032 ns  ; keyboardread0 ; mem[5][6] ; clk      ;
+; N/A                                     ; None                                                ; 11.031 ns  ; keyboardread0 ; cislo2[3] ; clk      ;
+; N/A                                     ; None                                                ; 11.031 ns  ; keyboardread0 ; cislo2[7] ; clk      ;
+; N/A                                     ; None                                                ; 11.017 ns  ; keyboardread0 ; cislo2[5] ; clk      ;
+; N/A                                     ; None                                                ; 11.014 ns  ; keyboardread1 ; mem[5][5] ; clk      ;
+; N/A                                     ; None                                                ; 11.010 ns  ; keyboardread2 ; cislo2[4] ; clk      ;
+; N/A                                     ; None                                                ; 11.006 ns  ; keyboardread2 ; cislo6[3] ; clk      ;
+; N/A                                     ; None                                                ; 11.006 ns  ; keyboardread2 ; cislo6[5] ; clk      ;
+; N/A                                     ; None                                                ; 11.005 ns  ; keyboardread3 ; mem[1][1] ; clk      ;
+; N/A                                     ; None                                                ; 11.004 ns  ; keyboardread0 ; cislo7[2] ; clk      ;
+; N/A                                     ; None                                                ; 11.001 ns  ; keyboardread2 ; cislo3[5] ; clk      ;
+; N/A                                     ; None                                                ; 10.999 ns  ; keyboardread1 ; cislo0[2] ; clk      ;
+; N/A                                     ; None                                                ; 10.994 ns  ; keyboardread0 ; cislo3[2] ; clk      ;
+; N/A                                     ; None                                                ; 10.992 ns  ; keyboardread2 ; cislo0[4] ; clk      ;
+; N/A                                     ; None                                                ; 10.987 ns  ; keyboardread3 ; cislo7[4] ; clk      ;
+; N/A                                     ; None                                                ; 10.987 ns  ; keyboardread0 ; cislo3[7] ; clk      ;
+; N/A                                     ; None                                                ; 10.983 ns  ; keyboardread3 ; mem[2][1] ; clk      ;
+; N/A                                     ; None                                                ; 10.980 ns  ; keyboardread2 ; cislo4[3] ; clk      ;
+; N/A                                     ; None                                                ; 10.976 ns  ; keyboardread1 ; mem[4][3] ; clk      ;
+; N/A                                     ; None                                                ; 10.976 ns  ; keyboardread0 ; mem[7][4] ; clk      ;
+; N/A                                     ; None                                                ; 10.972 ns  ; keyboardread2 ; cislo6[7] ; clk      ;
+; N/A                                     ; None                                                ; 10.964 ns  ; keyboardread2 ; mem[2][7] ; clk      ;
+; N/A                                     ; None                                                ; 10.963 ns  ; keyboardread3 ; mem[5][2] ; clk      ;
+; N/A                                     ; None                                                ; 10.956 ns  ; keyboardread0 ; mem[7][6] ; clk      ;
+; N/A                                     ; None                                                ; 10.954 ns  ; keyboardread1 ; mem[5][4] ; clk      ;
+; N/A                                     ; None                                                ; 10.954 ns  ; keyboardread1 ; cislo6[6] ; clk      ;
+; N/A                                     ; None                                                ; 10.953 ns  ; keyboardread1 ; cislo6[1] ; clk      ;
+; N/A                                     ; None                                                ; 10.953 ns  ; keyboardread1 ; cislo6[2] ; clk      ;
+; N/A                                     ; None                                                ; 10.952 ns  ; keyboardread0 ; mem[1][4] ; clk      ;
+; N/A                                     ; None                                                ; 10.950 ns  ; keyboardread1 ; cislo2[2] ; clk      ;
+; N/A                                     ; None                                                ; 10.949 ns  ; keyboardread0 ; mem[1][5] ; clk      ;
+; N/A                                     ; None                                                ; 10.945 ns  ; keyboardread2 ; cislo0[1] ; clk      ;
+; N/A                                     ; None                                                ; 10.944 ns  ; keyboardread0 ; cislo1[5] ; clk      ;
+; N/A                                     ; None                                                ; 10.937 ns  ; keyboardread0 ; cislo5[5] ; clk      ;
+; N/A                                     ; None                                                ; 10.934 ns  ; keyboardread1 ; cislo6[4] ; clk      ;
+; N/A                                     ; None                                                ; 10.932 ns  ; keyboardread2 ; cislo3[6] ; clk      ;
+; N/A                                     ; None                                                ; 10.931 ns  ; keyboardread2 ; cislo7[7] ; clk      ;
+; N/A                                     ; None                                                ; 10.930 ns  ; keyboardread1 ; mem[3][1] ; clk      ;
+; N/A                                     ; None                                                ; 10.930 ns  ; keyboardread1 ; mem[3][7] ; clk      ;
+; N/A                                     ; None                                                ; 10.922 ns  ; keyboardread0 ; mem[7][5] ; clk      ;
+; N/A                                     ; None                                                ; 10.919 ns  ; keyboardread1 ; cislo0[6] ; clk      ;
+; N/A                                     ; None                                                ; 10.918 ns  ; keyboardread0 ; cislo1[4] ; clk      ;
+; N/A                                     ; None                                                ; 10.908 ns  ; keyboardread3 ; cislo2[4] ; clk      ;
+; N/A                                     ; None                                                ; 10.906 ns  ; keyboardread0 ; mem[3][3] ; clk      ;
+; N/A                                     ; None                                                ; 10.904 ns  ; keyboardread3 ; cislo6[3] ; clk      ;
+; N/A                                     ; None                                                ; 10.904 ns  ; keyboardread3 ; cislo6[5] ; clk      ;
+; N/A                                     ; None                                                ; 10.902 ns  ; keyboardread2 ; mem[6][1] ; clk      ;
+; N/A                                     ; None                                                ; 10.899 ns  ; keyboardread3 ; cislo3[5] ; clk      ;
+; N/A                                     ; None                                                ; 10.890 ns  ; keyboardread3 ; cislo0[4] ; clk      ;
+; N/A                                     ; None                                                ; 10.888 ns  ; keyboardread0 ; mem[1][2] ; clk      ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;            ;               ;           ;          ;
++-----------------------------------------+-----------------------------------------------------+------------+---------------+-----------+----------+
+
+
++--------------------------------------------------------------------------+
+; tco                                                                      ;
++-------+--------------+------------+-----------+-------------+------------+
+; Slack ; Required tco ; Actual tco ; From      ; To          ; From Clock ;
++-------+--------------+------------+-----------+-------------+------------+
+; N/A   ; None         ; 21.118 ns  ; cislo6[3] ; segment[3]  ; clk        ;
+; N/A   ; None         ; 20.732 ns  ; cislo3[1] ; segment[1]  ; clk        ;
+; N/A   ; None         ; 20.583 ns  ; cislo2[3] ; segment[3]  ; clk        ;
+; N/A   ; None         ; 20.492 ns  ; reg[6]    ; segment[2]  ; clk        ;
+; N/A   ; None         ; 20.449 ns  ; cislo3[3] ; segment[3]  ; clk        ;
+; N/A   ; None         ; 20.282 ns  ; reg[5]    ; segment[2]  ; clk        ;
+; N/A   ; None         ; 20.145 ns  ; reg[6]    ; segment[3]  ; clk        ;
+; N/A   ; None         ; 20.060 ns  ; cislo2[1] ; segment[1]  ; clk        ;
+; N/A   ; None         ; 19.975 ns  ; reg[4]    ; segment[2]  ; clk        ;
+; N/A   ; None         ; 19.935 ns  ; reg[5]    ; segment[3]  ; clk        ;
+; N/A   ; None         ; 19.933 ns  ; cislo3[7] ; segment[7]  ; clk        ;
+; N/A   ; None         ; 19.872 ns  ; cislo2[6] ; segment[6]  ; clk        ;
+; N/A   ; None         ; 19.869 ns  ; cislo2[7] ; segment[7]  ; clk        ;
+; N/A   ; None         ; 19.846 ns  ; cislo3[6] ; segment[6]  ; clk        ;
+; N/A   ; None         ; 19.801 ns  ; cislo6[2] ; segment[2]  ; clk        ;
+; N/A   ; None         ; 19.776 ns  ; cislo5[2] ; segment[2]  ; clk        ;
+; N/A   ; None         ; 19.681 ns  ; reg[3]    ; segment[2]  ; clk        ;
+; N/A   ; None         ; 19.634 ns  ; reg[2]    ; segment[2]  ; clk        ;
+; N/A   ; None         ; 19.628 ns  ; reg[4]    ; segment[3]  ; clk        ;
+; N/A   ; None         ; 19.628 ns  ; reg[7]    ; segment[2]  ; clk        ;
+; N/A   ; None         ; 19.611 ns  ; cislo5[1] ; segment[1]  ; clk        ;
+; N/A   ; None         ; 19.432 ns  ; cislo3[2] ; segment[2]  ; clk        ;
+; N/A   ; None         ; 19.351 ns  ; reg[6]    ; segment[6]  ; clk        ;
+; N/A   ; None         ; 19.323 ns  ; cislo3[5] ; segment[5]  ; clk        ;
+; N/A   ; None         ; 19.292 ns  ; reg[1]    ; segment[2]  ; clk        ;
+; N/A   ; None         ; 19.281 ns  ; reg[7]    ; segment[3]  ; clk        ;
+; N/A   ; None         ; 19.226 ns  ; cislo1[6] ; segment[6]  ; clk        ;
+; N/A   ; None         ; 19.149 ns  ; reg[2]    ; segment[3]  ; clk        ;
+; N/A   ; None         ; 19.141 ns  ; reg[5]    ; segment[6]  ; clk        ;
+; N/A   ; None         ; 19.033 ns  ; cislo5[6] ; segment[6]  ; clk        ;
+; N/A   ; None         ; 18.900 ns  ; cislo3[4] ; segment[4]  ; clk        ;
+; N/A   ; None         ; 18.897 ns  ; reg[3]    ; segment[3]  ; clk        ;
+; N/A   ; None         ; 18.853 ns  ; cislo6[5] ; segment[5]  ; clk        ;
+; N/A   ; None         ; 18.834 ns  ; reg[4]    ; segment[6]  ; clk        ;
+; N/A   ; None         ; 18.807 ns  ; cislo0[4] ; segment[4]  ; clk        ;
+; N/A   ; None         ; 18.732 ns  ; cislo2[2] ; segment[2]  ; clk        ;
+; N/A   ; None         ; 18.716 ns  ; reg[2]    ; segment[1]  ; clk        ;
+; N/A   ; None         ; 18.641 ns  ; reg[1]    ; segment[3]  ; clk        ;
+; N/A   ; None         ; 18.542 ns  ; cislo0[3] ; segment[3]  ; clk        ;
+; N/A   ; None         ; 18.487 ns  ; reg[7]    ; segment[6]  ; clk        ;
+; N/A   ; None         ; 18.459 ns  ; reg[3]    ; segment[6]  ; clk        ;
+; N/A   ; None         ; 18.441 ns  ; cislo2[4] ; segment[4]  ; clk        ;
+; N/A   ; None         ; 18.422 ns  ; reg[6]    ; segment[1]  ; clk        ;
+; N/A   ; None         ; 18.406 ns  ; reg[6]    ; segment[7]  ; clk        ;
+; N/A   ; None         ; 18.374 ns  ; reg[1]    ; segment[1]  ; clk        ;
+; N/A   ; None         ; 18.368 ns  ; cislo6[7] ; segment[7]  ; clk        ;
+; N/A   ; None         ; 18.310 ns  ; reg[5]    ; segment[1]  ; clk        ;
+; N/A   ; None         ; 18.304 ns  ; cislo6[6] ; segment[6]  ; clk        ;
+; N/A   ; None         ; 18.235 ns  ; cislo5[3] ; segment[3]  ; clk        ;
+; N/A   ; None         ; 18.223 ns  ; cislo5[7] ; segment[7]  ; clk        ;
+; N/A   ; None         ; 18.217 ns  ; cislo1[3] ; segment[3]  ; clk        ;
+; N/A   ; None         ; 18.217 ns  ; cislo1[2] ; segment[2]  ; clk        ;
+; N/A   ; None         ; 18.196 ns  ; reg[5]    ; segment[7]  ; clk        ;
+; N/A   ; None         ; 18.171 ns  ; reg[2]    ; segment[6]  ; clk        ;
+; N/A   ; None         ; 17.992 ns  ; reg[3]    ; segment[1]  ; clk        ;
+; N/A   ; None         ; 17.982 ns  ; reg[6]    ; segment[4]  ; clk        ;
+; N/A   ; None         ; 17.946 ns  ; reg[6]    ; segment[5]  ; clk        ;
+; N/A   ; None         ; 17.946 ns  ; cislo0[1] ; segment[1]  ; clk        ;
+; N/A   ; None         ; 17.906 ns  ; reg[3]    ; segment[7]  ; clk        ;
+; N/A   ; None         ; 17.905 ns  ; reg[4]    ; segment[1]  ; clk        ;
+; N/A   ; None         ; 17.898 ns  ; cislo0[7] ; segment[7]  ; clk        ;
+; N/A   ; None         ; 17.889 ns  ; reg[4]    ; segment[7]  ; clk        ;
+; N/A   ; None         ; 17.868 ns  ; reg[3]    ; segment[5]  ; clk        ;
+; N/A   ; None         ; 17.851 ns  ; reg[7]    ; segment[7]  ; clk        ;
+; N/A   ; None         ; 17.816 ns  ; reg[2]    ; segment[4]  ; clk        ;
+; N/A   ; None         ; 17.772 ns  ; reg[5]    ; segment[4]  ; clk        ;
+; N/A   ; None         ; 17.736 ns  ; reg[5]    ; segment[5]  ; clk        ;
+; N/A   ; None         ; 17.724 ns  ; reg[2]    ; segment[5]  ; clk        ;
+; N/A   ; None         ; 17.698 ns  ; reg[2]    ; segment[7]  ; clk        ;
+; N/A   ; None         ; 17.642 ns  ; cislo0[2] ; segment[2]  ; clk        ;
+; N/A   ; None         ; 17.590 ns  ; cislo6[4] ; segment[4]  ; clk        ;
+; N/A   ; None         ; 17.561 ns  ; cislo1[1] ; segment[1]  ; clk        ;
+; N/A   ; None         ; 17.558 ns  ; reg[7]    ; segment[1]  ; clk        ;
+; N/A   ; None         ; 17.512 ns  ; reg[1]    ; segment[4]  ; clk        ;
+; N/A   ; None         ; 17.465 ns  ; reg[4]    ; segment[4]  ; clk        ;
+; N/A   ; None         ; 17.429 ns  ; reg[4]    ; segment[5]  ; clk        ;
+; N/A   ; None         ; 17.382 ns  ; reg[1]    ; segment[5]  ; clk        ;
+; N/A   ; None         ; 17.379 ns  ; cislo6[1] ; segment[1]  ; clk        ;
+; N/A   ; None         ; 17.375 ns  ; cislo0[5] ; segment[5]  ; clk        ;
+; N/A   ; None         ; 17.365 ns  ; reg[1]    ; segment[7]  ; clk        ;
+; N/A   ; None         ; 17.334 ns  ; cislo1[7] ; segment[7]  ; clk        ;
+; N/A   ; None         ; 17.326 ns  ; cislo4[2] ; segment[2]  ; clk        ;
+; N/A   ; None         ; 17.320 ns  ; cislo5[5] ; segment[5]  ; clk        ;
+; N/A   ; None         ; 17.173 ns  ; reg[1]    ; segment[6]  ; clk        ;
+; N/A   ; None         ; 17.118 ns  ; reg[7]    ; segment[4]  ; clk        ;
+; N/A   ; None         ; 17.082 ns  ; reg[7]    ; segment[5]  ; clk        ;
+; N/A   ; None         ; 16.873 ns  ; reg[3]    ; segment[4]  ; clk        ;
+; N/A   ; None         ; 16.863 ns  ; cislo0[6] ; segment[6]  ; clk        ;
+; N/A   ; None         ; 16.749 ns  ; cislo2[5] ; segment[5]  ; clk        ;
+; N/A   ; None         ; 16.317 ns  ; cislo4[6] ; segment[6]  ; clk        ;
+; N/A   ; None         ; 16.252 ns  ; cislo1[4] ; segment[4]  ; clk        ;
+; N/A   ; None         ; 16.086 ns  ; cislo5[4] ; segment[4]  ; clk        ;
+; N/A   ; None         ; 16.000 ns  ; cislo4[5] ; segment[5]  ; clk        ;
+; N/A   ; None         ; 15.768 ns  ; cislo1[5] ; segment[5]  ; clk        ;
+; N/A   ; None         ; 15.361 ns  ; cislo4[4] ; segment[4]  ; clk        ;
+; N/A   ; None         ; 15.218 ns  ; cislo4[1] ; segment[1]  ; clk        ;
+; N/A   ; None         ; 15.212 ns  ; cislo4[3] ; segment[3]  ; clk        ;
+; N/A   ; None         ; 15.126 ns  ; cislo4[7] ; segment[7]  ; clk        ;
+; N/A   ; None         ; 14.883 ns  ; cislo7[3] ; segment[3]  ; clk        ;
+; N/A   ; None         ; 14.607 ns  ; cislo7[1] ; segment[1]  ; clk        ;
+; N/A   ; None         ; 14.398 ns  ; reg[0]    ; segment[1]  ; clk        ;
+; N/A   ; None         ; 14.322 ns  ; keyseg[1] ; keyboard[1] ; clk        ;
+; N/A   ; None         ; 14.310 ns  ; cislo7[4] ; segment[4]  ; clk        ;
+; N/A   ; None         ; 14.213 ns  ; cislo7[6] ; segment[6]  ; clk        ;
+; N/A   ; None         ; 14.047 ns  ; cislo7[2] ; segment[2]  ; clk        ;
+; N/A   ; None         ; 13.877 ns  ; keyseg[2] ; keyboard[2] ; clk        ;
+; N/A   ; None         ; 13.720 ns  ; reg[0]    ; segment[3]  ; clk        ;
+; N/A   ; None         ; 13.617 ns  ; keyseg[0] ; keyboard[0] ; clk        ;
+; N/A   ; None         ; 13.544 ns  ; cislo7[7] ; segment[7]  ; clk        ;
+; N/A   ; None         ; 13.518 ns  ; reg[0]    ; segment[2]  ; clk        ;
+; N/A   ; None         ; 13.498 ns  ; reg[0]    ; segment[4]  ; clk        ;
+; N/A   ; None         ; 13.350 ns  ; reg[0]    ; segment[5]  ; clk        ;
+; N/A   ; None         ; 13.329 ns  ; keyseg[3] ; keyboard[3] ; clk        ;
+; N/A   ; None         ; 13.280 ns  ; cislo7[5] ; segment[5]  ; clk        ;
+; N/A   ; None         ; 13.081 ns  ; reg[0]    ; segment[6]  ; clk        ;
+; N/A   ; None         ; 13.069 ns  ; reg[0]    ; segment[7]  ; clk        ;
+; N/A   ; None         ; 12.042 ns  ; reg[3]    ; led[3]      ; clk        ;
+; N/A   ; None         ; 11.658 ns  ; reg[7]    ; led[7]      ; clk        ;
+; N/A   ; None         ; 11.267 ns  ; reg[0]    ; led[0]      ; clk        ;
+; N/A   ; None         ; 11.265 ns  ; reg[5]    ; led[5]      ; clk        ;
+; N/A   ; None         ; 11.261 ns  ; reg[1]    ; led[1]      ; clk        ;
+; N/A   ; None         ; 10.936 ns  ; reg[4]    ; led[4]      ; clk        ;
+; N/A   ; None         ; 10.934 ns  ; reg[6]    ; led[6]      ; clk        ;
+; N/A   ; None         ; 10.500 ns  ; reg[2]    ; led[2]      ; clk        ;
++-------+--------------+------------+-----------+-------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; th                                                                                                                                               ;
++-----------------------------------------+-----------------------------------------------------+-----------+---------------+-----------+----------+
+; Minimum Slack                           ; Required th                                         ; Actual th ; From          ; To        ; To Clock ;
++-----------------------------------------+-----------------------------------------------------+-----------+---------------+-----------+----------+
+; N/A                                     ; None                                                ; -0.521 ns ; keyboardread0 ; mem[3][4] ; clk      ;
+; N/A                                     ; None                                                ; -0.952 ns ; keyboardread3 ; mem[1][3] ; clk      ;
+; N/A                                     ; None                                                ; -0.979 ns ; keyboardread0 ; mem[4][4] ; clk      ;
+; N/A                                     ; None                                                ; -0.999 ns ; keyboardread0 ; mem[5][4] ; clk      ;
+; N/A                                     ; None                                                ; -1.047 ns ; keyboardread3 ; mem[0][2] ; clk      ;
+; N/A                                     ; None                                                ; -1.060 ns ; keyboardread0 ; mem[0][4] ; clk      ;
+; N/A                                     ; None                                                ; -1.070 ns ; keyboardread0 ; mem[6][4] ; clk      ;
+; N/A                                     ; None                                                ; -1.092 ns ; keyboardread2 ; mem[1][1] ; clk      ;
+; N/A                                     ; None                                                ; -1.169 ns ; keyboardread2 ; mem[2][1] ; clk      ;
+; N/A                                     ; None                                                ; -1.173 ns ; keyboardread2 ; mem[5][1] ; clk      ;
+; N/A                                     ; None                                                ; -1.197 ns ; keyboardread2 ; mem[4][1] ; clk      ;
+; N/A                                     ; None                                                ; -1.279 ns ; keyboardread3 ; mem[5][2] ; clk      ;
+; N/A                                     ; None                                                ; -1.363 ns ; keyboardread2 ; mem[6][5] ; clk      ;
+; N/A                                     ; None                                                ; -1.386 ns ; keyboardread3 ; mem[1][2] ; clk      ;
+; N/A                                     ; None                                                ; -1.424 ns ; keyboardread0 ; mem[2][4] ; clk      ;
+; N/A                                     ; None                                                ; -1.426 ns ; keyboardread0 ; mem[7][4] ; clk      ;
+; N/A                                     ; None                                                ; -1.427 ns ; keyboardread3 ; mem[5][3] ; clk      ;
+; N/A                                     ; None                                                ; -1.462 ns ; keyboardread2 ; mem[7][1] ; clk      ;
+; N/A                                     ; None                                                ; -1.464 ns ; keyboardread3 ; mem[2][2] ; clk      ;
+; N/A                                     ; None                                                ; -1.464 ns ; keyboardread3 ; mem[6][2] ; clk      ;
+; N/A                                     ; None                                                ; -1.482 ns ; keyboardread1 ; mem[2][4] ; clk      ;
+; N/A                                     ; None                                                ; -1.494 ns ; keyboardread3 ; mem[6][3] ; clk      ;
+; N/A                                     ; None                                                ; -1.523 ns ; keyboardread3 ; mem[1][6] ; clk      ;
+; N/A                                     ; None                                                ; -1.534 ns ; keyboardread2 ; mem[0][1] ; clk      ;
+; N/A                                     ; None                                                ; -1.534 ns ; keyboardread2 ; mem[0][5] ; clk      ;
+; N/A                                     ; None                                                ; -1.566 ns ; keyboardread0 ; mem[3][6] ; clk      ;
+; N/A                                     ; None                                                ; -1.573 ns ; keyboardread3 ; mem[2][4] ; clk      ;
+; N/A                                     ; None                                                ; -1.629 ns ; keyboardread0 ; mem[6][6] ; clk      ;
+; N/A                                     ; None                                                ; -1.704 ns ; keyboardread0 ; mem[4][2] ; clk      ;
+; N/A                                     ; None                                                ; -1.711 ns ; keyboardread3 ; mem[5][6] ; clk      ;
+; N/A                                     ; None                                                ; -1.725 ns ; keyboardread2 ; mem[2][4] ; clk      ;
+; N/A                                     ; None                                                ; -1.786 ns ; keyboardread0 ; mem[2][2] ; clk      ;
+; N/A                                     ; None                                                ; -1.794 ns ; keyboardread0 ; mem[6][2] ; clk      ;
+; N/A                                     ; None                                                ; -1.805 ns ; keyboardread3 ; mem[7][2] ; clk      ;
+; N/A                                     ; None                                                ; -1.819 ns ; keyboardread3 ; mem[3][2] ; clk      ;
+; N/A                                     ; None                                                ; -1.831 ns ; keyboardread3 ; mem[7][6] ; clk      ;
+; N/A                                     ; None                                                ; -1.850 ns ; keyboardread3 ; mem[4][2] ; clk      ;
+; N/A                                     ; None                                                ; -1.850 ns ; keyboardread0 ; mem[4][6] ; clk      ;
+; N/A                                     ; None                                                ; -1.851 ns ; keyboardread2 ; mem[3][1] ; clk      ;
+; N/A                                     ; None                                                ; -1.884 ns ; keyboardread2 ; mem[2][5] ; clk      ;
+; N/A                                     ; None                                                ; -1.887 ns ; keyboardread2 ; mem[6][1] ; clk      ;
+; N/A                                     ; None                                                ; -1.959 ns ; keyboardread1 ; mem[7][4] ; clk      ;
+; N/A                                     ; None                                                ; -1.960 ns ; keyboardread1 ; mem[5][4] ; clk      ;
+; N/A                                     ; None                                                ; -2.007 ns ; keyboardread2 ; mem[7][5] ; clk      ;
+; N/A                                     ; None                                                ; -2.018 ns ; keyboardread3 ; mem[7][4] ; clk      ;
+; N/A                                     ; None                                                ; -2.021 ns ; keyboardread0 ; mem[5][2] ; clk      ;
+; N/A                                     ; None                                                ; -2.050 ns ; keyboardread0 ; mem[3][2] ; clk      ;
+; N/A                                     ; None                                                ; -2.051 ns ; keyboardread3 ; mem[5][4] ; clk      ;
+; N/A                                     ; None                                                ; -2.065 ns ; keyboardread0 ; mem[1][7] ; clk      ;
+; N/A                                     ; None                                                ; -2.068 ns ; keyboardread0 ; mem[1][2] ; clk      ;
+; N/A                                     ; None                                                ; -2.074 ns ; keyboardread3 ; mem[7][5] ; clk      ;
+; N/A                                     ; None                                                ; -2.083 ns ; keyboardread3 ; mem[5][5] ; clk      ;
+; N/A                                     ; None                                                ; -2.084 ns ; keyboardread3 ; mem[0][5] ; clk      ;
+; N/A                                     ; None                                                ; -2.097 ns ; keyboardread3 ; mem[6][6] ; clk      ;
+; N/A                                     ; None                                                ; -2.117 ns ; keyboardread0 ; mem[0][2] ; clk      ;
+; N/A                                     ; None                                                ; -2.149 ns ; keyboardread3 ; mem[0][1] ; clk      ;
+; N/A                                     ; None                                                ; -2.151 ns ; keyboardread3 ; mem[1][7] ; clk      ;
+; N/A                                     ; None                                                ; -2.160 ns ; keyboardread0 ; mem[5][7] ; clk      ;
+; N/A                                     ; None                                                ; -2.165 ns ; keyboardread0 ; mem[1][4] ; clk      ;
+; N/A                                     ; None                                                ; -2.176 ns ; keyboardread1 ; mem[0][3] ; clk      ;
+; N/A                                     ; None                                                ; -2.182 ns ; keyboardread3 ; mem[6][4] ; clk      ;
+; N/A                                     ; None                                                ; -2.191 ns ; keyboardread2 ; mem[4][5] ; clk      ;
+; N/A                                     ; None                                                ; -2.191 ns ; keyboardread3 ; mem[2][5] ; clk      ;
+; N/A                                     ; None                                                ; -2.192 ns ; keyboardread3 ; mem[2][6] ; clk      ;
+; N/A                                     ; None                                                ; -2.197 ns ; keyboardread0 ; mem[0][3] ; clk      ;
+; N/A                                     ; None                                                ; -2.202 ns ; keyboardread2 ; mem[7][4] ; clk      ;
+; N/A                                     ; None                                                ; -2.203 ns ; keyboardread2 ; mem[5][4] ; clk      ;
+; N/A                                     ; None                                                ; -2.246 ns ; keyboardread0 ; mem[6][3] ; clk      ;
+; N/A                                     ; None                                                ; -2.263 ns ; keyboardread3 ; mem[6][1] ; clk      ;
+; N/A                                     ; None                                                ; -2.282 ns ; keyboardread2 ; mem[1][5] ; clk      ;
+; N/A                                     ; None                                                ; -2.283 ns ; keyboardread3 ; mem[2][1] ; clk      ;
+; N/A                                     ; None                                                ; -2.305 ns ; keyboardread0 ; mem[0][6] ; clk      ;
+; N/A                                     ; None                                                ; -2.312 ns ; keyboardread1 ; mem[1][1] ; clk      ;
+; N/A                                     ; None                                                ; -2.332 ns ; keyboardread3 ; mem[3][3] ; clk      ;
+; N/A                                     ; None                                                ; -2.335 ns ; keyboardread2 ; mem[5][5] ; clk      ;
+; N/A                                     ; None                                                ; -2.337 ns ; keyboardread3 ; mem[5][1] ; clk      ;
+; N/A                                     ; None                                                ; -2.368 ns ; keyboardread0 ; mem[2][5] ; clk      ;
+; N/A                                     ; None                                                ; -2.411 ns ; keyboardread0 ; mem[3][7] ; clk      ;
+; N/A                                     ; None                                                ; -2.417 ns ; keyboardread0 ; mem[2][7] ; clk      ;
+; N/A                                     ; None                                                ; -2.428 ns ; keyboardread0 ; mem[4][3] ; clk      ;
+; N/A                                     ; None                                                ; -2.434 ns ; keyboardread3 ; mem[4][6] ; clk      ;
+; N/A                                     ; None                                                ; -2.441 ns ; keyboardread0 ; mem[2][6] ; clk      ;
+; N/A                                     ; None                                                ; -2.451 ns ; keyboardread0 ; mem[1][1] ; clk      ;
+; N/A                                     ; None                                                ; -2.456 ns ; keyboardread0 ; mem[7][7] ; clk      ;
+; N/A                                     ; None                                                ; -2.485 ns ; keyboardread0 ; mem[1][6] ; clk      ;
+; N/A                                     ; None                                                ; -2.488 ns ; keyboardread0 ; mem[7][6] ; clk      ;
+; N/A                                     ; None                                                ; -2.500 ns ; keyboardread1 ; mem[5][3] ; clk      ;
+; N/A                                     ; None                                                ; -2.524 ns ; keyboardread1 ; mem[5][6] ; clk      ;
+; N/A                                     ; None                                                ; -2.535 ns ; keyboardread3 ; mem[6][5] ; clk      ;
+; N/A                                     ; None                                                ; -2.542 ns ; keyboardread0 ; mem[2][3] ; clk      ;
+; N/A                                     ; None                                                ; -2.574 ns ; keyboardread3 ; mem[4][4] ; clk      ;
+; N/A                                     ; None                                                ; -2.578 ns ; keyboardread3 ; mem[7][7] ; clk      ;
+; N/A                                     ; None                                                ; -2.591 ns ; keyboardread2 ; mem[3][5] ; clk      ;
+; N/A                                     ; None                                                ; -2.596 ns ; keyboardread3 ; mem[0][4] ; clk      ;
+; N/A                                     ; None                                                ; -2.611 ns ; keyboardread3 ; mem[1][1] ; clk      ;
+; N/A                                     ; None                                                ; -2.631 ns ; keyboardread1 ; mem[1][7] ; clk      ;
+; N/A                                     ; None                                                ; -2.677 ns ; keyboardread0 ; mem[7][3] ; clk      ;
+; N/A                                     ; None                                                ; -2.704 ns ; keyboardread1 ; mem[5][2] ; clk      ;
+; N/A                                     ; None                                                ; -2.708 ns ; keyboardread3 ; mem[1][5] ; clk      ;
+; N/A                                     ; None                                                ; -2.721 ns ; keyboardread3 ; mem[2][7] ; clk      ;
+; N/A                                     ; None                                                ; -2.727 ns ; keyboardread0 ; mem[1][3] ; clk      ;
+; N/A                                     ; None                                                ; -2.736 ns ; keyboardread0 ; mem[3][3] ; clk      ;
+; N/A                                     ; None                                                ; -2.742 ns ; keyboardread3 ; mem[7][1] ; clk      ;
+; N/A                                     ; None                                                ; -2.746 ns ; keyboardread3 ; mem[4][3] ; clk      ;
+; N/A                                     ; None                                                ; -2.751 ns ; keyboardread1 ; mem[1][2] ; clk      ;
+; N/A                                     ; None                                                ; -2.751 ns ; keyboardread2 ; mem[5][2] ; clk      ;
+; N/A                                     ; None                                                ; -2.765 ns ; keyboardread2 ; mem[6][3] ; clk      ;
+; N/A                                     ; None                                                ; -2.770 ns ; keyboardread0 ; mem[3][5] ; clk      ;
+; N/A                                     ; None                                                ; -2.783 ns ; keyboardread2 ; mem[1][7] ; clk      ;
+; N/A                                     ; None                                                ; -2.784 ns ; keyboardread1 ; mem[1][3] ; clk      ;
+; N/A                                     ; None                                                ; -2.791 ns ; keyboardread0 ; mem[5][6] ; clk      ;
+; N/A                                     ; None                                                ; -2.796 ns ; keyboardread3 ; mem[0][3] ; clk      ;
+; N/A                                     ; None                                                ; -2.798 ns ; keyboardread2 ; mem[1][2] ; clk      ;
+; N/A                                     ; None                                                ; -2.837 ns ; keyboardread3 ; mem[3][6] ; clk      ;
+; N/A                                     ; None                                                ; -2.870 ns ; keyboardread1 ; mem[5][7] ; clk      ;
+; N/A                                     ; None                                                ; -2.871 ns ; keyboardread3 ; mem[3][4] ; clk      ;
+; N/A                                     ; None                                                ; -2.874 ns ; keyboardread0 ; mem[1][5] ; clk      ;
+; N/A                                     ; None                                                ; -2.878 ns ; keyboardread2 ; mem[5][7] ; clk      ;
+; N/A                                     ; None                                                ; -2.894 ns ; keyboardread0 ; mem[4][5] ; clk      ;
+; N/A                                     ; None                                                ; -2.895 ns ; keyboardread3 ; mem[4][5] ; clk      ;
+; N/A                                     ; None                                                ; -2.951 ns ; keyboardread3 ; mem[3][7] ; clk      ;
+; N/A                                     ; None                                                ; -2.956 ns ; keyboardread3 ; mem[3][1] ; clk      ;
+; N/A                                     ; None                                                ; -2.960 ns ; keyboardread0 ; mem[5][3] ; clk      ;
+; N/A                                     ; None                                                ; -2.988 ns ; keyboardread3 ; mem[7][3] ; clk      ;
+; N/A                                     ; None                                                ; -3.009 ns ; keyboardread1 ; mem[3][4] ; clk      ;
+; N/A                                     ; None                                                ; -3.014 ns ; keyboardread1 ; mem[0][6] ; clk      ;
+; N/A                                     ; None                                                ; -3.025 ns ; keyboardread0 ; mem[7][2] ; clk      ;
+; N/A                                     ; None                                                ; -3.037 ns ; keyboardread3 ; mem[1][4] ; clk      ;
+; N/A                                     ; None                                                ; -3.043 ns ; keyboardread1 ; mem[7][1] ; clk      ;
+; N/A                                     ; None                                                ; -3.054 ns ; keyboardread1 ; mem[2][3] ; clk      ;
+; N/A                                     ; None                                                ; -3.058 ns ; keyboardread1 ; mem[7][7] ; clk      ;
+; N/A                                     ; None                                                ; -3.063 ns ; keyboardread3 ; mem[6][7] ; clk      ;
+; N/A                                     ; None                                                ; -3.063 ns ; keyboardread3 ; mem[4][7] ; clk      ;
+; N/A                                     ; None                                                ; -3.074 ns ; keyboardread3 ; mem[4][1] ; clk      ;
+; N/A                                     ; None                                                ; -3.083 ns ; keyboardread1 ; mem[6][1] ; clk      ;
+; N/A                                     ; None                                                ; -3.083 ns ; keyboardread1 ; mem[4][4] ; clk      ;
+; N/A                                     ; None                                                ; -3.087 ns ; keyboardread1 ; mem[6][2] ; clk      ;
+; N/A                                     ; None                                                ; -3.088 ns ; keyboardread1 ; mem[2][2] ; clk      ;
+; N/A                                     ; None                                                ; -3.096 ns ; keyboardread1 ; mem[2][6] ; clk      ;
+; N/A                                     ; None                                                ; -3.098 ns ; keyboardread2 ; mem[5][3] ; clk      ;
+; N/A                                     ; None                                                ; -3.099 ns ; keyboardread1 ; mem[1][4] ; clk      ;
+; N/A                                     ; None                                                ; -3.100 ns ; keyboardread3 ; mem[2][3] ; clk      ;
+; N/A                                     ; None                                                ; -3.114 ns ; keyboardread3 ; mem[0][6] ; clk      ;
+; N/A                                     ; None                                                ; -3.121 ns ; keyboardread1 ; mem[3][7] ; clk      ;
+; N/A                                     ; None                                                ; -3.123 ns ; keyboardread1 ; mem[4][2] ; clk      ;
+; N/A                                     ; None                                                ; -3.127 ns ; keyboardread1 ; mem[2][7] ; clk      ;
+; N/A                                     ; None                                                ; -3.129 ns ; keyboardread2 ; mem[3][7] ; clk      ;
+; N/A                                     ; None                                                ; -3.134 ns ; keyboardread2 ; mem[6][2] ; clk      ;
+; N/A                                     ; None                                                ; -3.135 ns ; keyboardread2 ; mem[2][2] ; clk      ;
+; N/A                                     ; None                                                ; -3.135 ns ; keyboardread2 ; mem[2][7] ; clk      ;
+; N/A                                     ; None                                                ; -3.139 ns ; keyboardread1 ; mem[3][1] ; clk      ;
+; N/A                                     ; None                                                ; -3.149 ns ; keyboardread1 ; mem[3][3] ; clk      ;
+; N/A                                     ; None                                                ; -3.158 ns ; keyboardread2 ; mem[2][3] ; clk      ;
+; N/A                                     ; None                                                ; -3.170 ns ; keyboardread2 ; mem[4][2] ; clk      ;
+; N/A                                     ; None                                                ; -3.174 ns ; keyboardread2 ; mem[7][7] ; clk      ;
+; N/A                                     ; None                                                ; -3.182 ns ; keyboardread0 ; mem[7][1] ; clk      ;
+; N/A                                     ; None                                                ; -3.183 ns ; keyboardread0 ; mem[0][5] ; clk      ;
+; N/A                                     ; None                                                ; -3.210 ns ; keyboardread0 ; mem[4][7] ; clk      ;
+; N/A                                     ; None                                                ; -3.212 ns ; keyboardread0 ; mem[6][7] ; clk      ;
+; N/A                                     ; None                                                ; -3.220 ns ; keyboardread1 ; mem[6][3] ; clk      ;
+; N/A                                     ; None                                                ; -3.222 ns ; keyboardread0 ; mem[6][1] ; clk      ;
+; N/A                                     ; None                                                ; -3.242 ns ; keyboardread2 ; mem[1][3] ; clk      ;
+; N/A                                     ; None                                                ; -3.252 ns ; keyboardread2 ; mem[3][4] ; clk      ;
+; N/A                                     ; None                                                ; -3.278 ns ; keyboardread0 ; mem[3][1] ; clk      ;
+; N/A                                     ; None                                                ; -3.288 ns ; keyboardread1 ; mem[1][6] ; clk      ;
+; N/A                                     ; None                                                ; -3.313 ns ; keyboardread1 ; mem[4][3] ; clk      ;
+; N/A                                     ; None                                                ; -3.326 ns ; keyboardread2 ; mem[4][4] ; clk      ;
+; N/A                                     ; None                                                ; -3.329 ns ; keyboardread2 ; mem[7][3] ; clk      ;
+; N/A                                     ; None                                                ; -3.342 ns ; keyboardread2 ; mem[1][4] ; clk      ;
+; N/A                                     ; None                                                ; -3.356 ns ; keyboardread1 ; mem[7][6] ; clk      ;
+; N/A                                     ; None                                                ; -3.358 ns ; keyboardread0 ; mem[7][5] ; clk      ;
+; N/A                                     ; None                                                ; -3.376 ns ; keyboardread3 ; mem[3][5] ; clk      ;
+; N/A                                     ; None                                                ; -3.395 ns ; keyboardread1 ; mem[6][4] ; clk      ;
+; N/A                                     ; None                                                ; -3.409 ns ; keyboardread3 ; mem[5][7] ; clk      ;
+; N/A                                     ; None                                                ; -3.443 ns ; keyboardread0 ; mem[6][5] ; clk      ;
+; N/A                                     ; None                                                ; -3.470 ns ; keyboardread1 ; mem[7][3] ; clk      ;
+; N/A                                     ; None                                                ; -3.479 ns ; keyboardread0 ; mem[5][5] ; clk      ;
+; N/A                                     ; None                                                ; -3.490 ns ; keyboardread0 ; mem[4][1] ; clk      ;
+; N/A                                     ; None                                                ; -3.494 ns ; keyboardread1 ; mem[1][5] ; clk      ;
+; N/A                                     ; None                                                ; -3.510 ns ; keyboardread1 ; mem[2][5] ; clk      ;
+; N/A                                     ; None                                                ; -3.533 ns ; keyboardread1 ; mem[5][1] ; clk      ;
+; N/A                                     ; None                                                ; -3.534 ns ; keyboardread1 ; mem[2][1] ; clk      ;
+; N/A                                     ; None                                                ; -3.543 ns ; keyboardread1 ; mem[6][7] ; clk      ;
+; N/A                                     ; None                                                ; -3.543 ns ; keyboardread1 ; mem[4][7] ; clk      ;
+; N/A                                     ; None                                                ; -3.611 ns ; keyboardread0 ; mem[2][1] ; clk      ;
+; N/A                                     ; None                                                ; -3.618 ns ; keyboardread0 ; mem[5][1] ; clk      ;
+; N/A                                     ; None                                                ; -3.638 ns ; keyboardread2 ; mem[6][4] ; clk      ;
+; N/A                                     ; None                                                ; -3.687 ns ; keyboardread1 ; mem[3][6] ; clk      ;
+; N/A                                     ; None                                                ; -3.696 ns ; keyboardread2 ; mem[3][3] ; clk      ;
+; N/A                                     ; None                                                ; -3.705 ns ; keyboardread1 ; mem[6][6] ; clk      ;
+; N/A                                     ; None                                                ; -3.708 ns ; keyboardread1 ; mem[7][2] ; clk      ;
+; N/A                                     ; None                                                ; -3.755 ns ; keyboardread2 ; mem[7][2] ; clk      ;
+; N/A                                     ; None                                                ; -3.778 ns ; keyboardread0 ; mem[0][1] ; clk      ;
+; N/A                                     ; None                                                ; -3.810 ns ; keyboardread1 ; mem[4][6] ; clk      ;
+; N/A                                     ; None                                                ; -3.876 ns ; keyboardread1 ; mem[3][2] ; clk      ;
+; N/A                                     ; None                                                ; -3.893 ns ; keyboardread1 ; mem[0][2] ; clk      ;
+; N/A                                     ; None                                                ; -3.923 ns ; keyboardread2 ; mem[3][2] ; clk      ;
+; N/A                                     ; None                                                ; -3.924 ns ; keyboardread0 ; mem[0][7] ; clk      ;
+; N/A                                     ; None                                                ; -3.928 ns ; keyboardread2 ; mem[4][7] ; clk      ;
+; N/A                                     ; None                                                ; -3.930 ns ; keyboardread2 ; mem[6][7] ; clk      ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;           ;               ;           ;          ;
++-----------------------------------------+-----------------------------------------------------+-----------+---------------+-----------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+    Info: Processing started: Tue May 19 18:00:40 2015
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off Projekt -c Projekt --timing_analysis_only
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "clk" is an undefined clock
+Warning: Found 3 node(s) in clock paths which may be acting as ripple and/or gated clocks -- node(s) analyzed as buffer(s) resulting in clock skew
+    Info: Detected ripple clock "regosm[15]" as buffer
+    Info: Detected ripple clock "hz_k" as buffer
+    Info: Detected ripple clock "hz" as buffer
+Info: Clock "clk" has Internal fmax of 94.93 MHz between source register "keyseg[3]" and destination register "cislo4[5]" (period= 10.534 ns)
+    Info: + Longest register to register delay is 10.271 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X18_Y5_N1; Fanout = 6; REG Node = 'keyseg[3]'
+        Info: 2: + IC(0.823 ns) + CELL(0.499 ns) = 1.322 ns; Loc. = LCCOMB_X18_Y5_N18; Fanout = 11; COMB Node = 'Equal3~0'
+        Info: 3: + IC(0.404 ns) + CELL(0.206 ns) = 1.932 ns; Loc. = LCCOMB_X18_Y5_N0; Fanout = 2; COMB Node = 'index~10'
+        Info: 4: + IC(2.268 ns) + CELL(0.651 ns) = 4.851 ns; Loc. = LCCOMB_X19_Y5_N0; Fanout = 5; COMB Node = 'index~15'
+        Info: 5: + IC(0.411 ns) + CELL(0.616 ns) = 5.878 ns; Loc. = LCCOMB_X19_Y5_N12; Fanout = 28; COMB Node = 'Add13~0'
+        Info: 6: + IC(1.529 ns) + CELL(0.624 ns) = 8.031 ns; Loc. = LCCOMB_X21_Y7_N26; Fanout = 2; COMB Node = 'cislo0[5]~4'
+        Info: 7: + IC(1.780 ns) + CELL(0.460 ns) = 10.271 ns; Loc. = LCFF_X21_Y7_N25; Fanout = 1; REG Node = 'cislo4[5]'
+        Info: Total cell delay = 3.056 ns ( 29.75 % )
+        Info: Total interconnect delay = 7.215 ns ( 70.25 % )
+    Info: - Smallest clock skew is 0.001 ns
+        Info: + Shortest clock path from clock "clk" to destination register is 7.258 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.100 ns) = 1.100 ns; Loc. = PIN_17; Fanout = 4; CLK Node = 'clk'
+            Info: 2: + IC(1.432 ns) + CELL(0.970 ns) = 3.502 ns; Loc. = LCFF_X9_Y10_N7; Fanout = 2; REG Node = 'hz'
+            Info: 3: + IC(2.265 ns) + CELL(0.000 ns) = 5.767 ns; Loc. = CLKCTRL_G1; Fanout = 115; COMB Node = 'hz~clkctrl'
+            Info: 4: + IC(0.825 ns) + CELL(0.666 ns) = 7.258 ns; Loc. = LCFF_X21_Y7_N25; Fanout = 1; REG Node = 'cislo4[5]'
+            Info: Total cell delay = 2.736 ns ( 37.70 % )
+            Info: Total interconnect delay = 4.522 ns ( 62.30 % )
+        Info: - Longest clock path from clock "clk" to source register is 7.257 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.100 ns) = 1.100 ns; Loc. = PIN_17; Fanout = 4; CLK Node = 'clk'
+            Info: 2: + IC(1.432 ns) + CELL(0.970 ns) = 3.502 ns; Loc. = LCFF_X9_Y10_N9; Fanout = 2; REG Node = 'hz_k'
+            Info: 3: + IC(2.260 ns) + CELL(0.000 ns) = 5.762 ns; Loc. = CLKCTRL_G0; Fanout = 4; COMB Node = 'hz_k~clkctrl'
+            Info: 4: + IC(0.829 ns) + CELL(0.666 ns) = 7.257 ns; Loc. = LCFF_X18_Y5_N1; Fanout = 6; REG Node = 'keyseg[3]'
+            Info: Total cell delay = 2.736 ns ( 37.70 % )
+            Info: Total interconnect delay = 4.521 ns ( 62.30 % )
+    Info: + Micro clock to output delay of source is 0.304 ns
+    Info: + Micro setup delay of destination is -0.040 ns
+Info: tsu for register "cislo4[5]" (data pin = "keyboardread2", clock pin = "clk") is 12.806 ns
+    Info: + Longest pin to register delay is 20.104 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.954 ns) = 0.954 ns; Loc. = PIN_41; Fanout = 33; PIN Node = 'keyboardread2'
+        Info: 2: + IC(7.471 ns) + CELL(0.370 ns) = 8.795 ns; Loc. = LCCOMB_X14_Y2_N24; Fanout = 27; COMB Node = 'index~6'
+        Info: 3: + IC(2.319 ns) + CELL(0.651 ns) = 11.765 ns; Loc. = LCCOMB_X18_Y5_N0; Fanout = 2; COMB Node = 'index~10'
+        Info: 4: + IC(2.268 ns) + CELL(0.651 ns) = 14.684 ns; Loc. = LCCOMB_X19_Y5_N0; Fanout = 5; COMB Node = 'index~15'
+        Info: 5: + IC(0.411 ns) + CELL(0.616 ns) = 15.711 ns; Loc. = LCCOMB_X19_Y5_N12; Fanout = 28; COMB Node = 'Add13~0'
+        Info: 6: + IC(1.529 ns) + CELL(0.624 ns) = 17.864 ns; Loc. = LCCOMB_X21_Y7_N26; Fanout = 2; COMB Node = 'cislo0[5]~4'
+        Info: 7: + IC(1.780 ns) + CELL(0.460 ns) = 20.104 ns; Loc. = LCFF_X21_Y7_N25; Fanout = 1; REG Node = 'cislo4[5]'
+        Info: Total cell delay = 4.326 ns ( 21.52 % )
+        Info: Total interconnect delay = 15.778 ns ( 78.48 % )
+    Info: + Micro setup delay of destination is -0.040 ns
+    Info: - Shortest clock path from clock "clk" to destination register is 7.258 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.100 ns) = 1.100 ns; Loc. = PIN_17; Fanout = 4; CLK Node = 'clk'
+        Info: 2: + IC(1.432 ns) + CELL(0.970 ns) = 3.502 ns; Loc. = LCFF_X9_Y10_N7; Fanout = 2; REG Node = 'hz'
+        Info: 3: + IC(2.265 ns) + CELL(0.000 ns) = 5.767 ns; Loc. = CLKCTRL_G1; Fanout = 115; COMB Node = 'hz~clkctrl'
+        Info: 4: + IC(0.825 ns) + CELL(0.666 ns) = 7.258 ns; Loc. = LCFF_X21_Y7_N25; Fanout = 1; REG Node = 'cislo4[5]'
+        Info: Total cell delay = 2.736 ns ( 37.70 % )
+        Info: Total interconnect delay = 4.522 ns ( 62.30 % )
+Info: tco from clock "clk" to destination pin "segment[3]" through register "cislo6[3]" is 21.118 ns
+    Info: + Longest clock path from clock "clk" to source register is 7.267 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.100 ns) = 1.100 ns; Loc. = PIN_17; Fanout = 4; CLK Node = 'clk'
+        Info: 2: + IC(1.432 ns) + CELL(0.970 ns) = 3.502 ns; Loc. = LCFF_X9_Y10_N7; Fanout = 2; REG Node = 'hz'
+        Info: 3: + IC(2.265 ns) + CELL(0.000 ns) = 5.767 ns; Loc. = CLKCTRL_G1; Fanout = 115; COMB Node = 'hz~clkctrl'
+        Info: 4: + IC(0.834 ns) + CELL(0.666 ns) = 7.267 ns; Loc. = LCFF_X21_Y5_N27; Fanout = 1; REG Node = 'cislo6[3]'
+        Info: Total cell delay = 2.736 ns ( 37.65 % )
+        Info: Total interconnect delay = 4.531 ns ( 62.35 % )
+    Info: + Micro clock to output delay of source is 0.304 ns
+    Info: + Longest register to pin delay is 13.547 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X21_Y5_N27; Fanout = 1; REG Node = 'cislo6[3]'
+        Info: 2: + IC(2.014 ns) + CELL(0.623 ns) = 2.637 ns; Loc. = LCCOMB_X19_Y6_N0; Fanout = 1; COMB Node = 'Mux68~9'
+        Info: 3: + IC(1.836 ns) + CELL(0.623 ns) = 5.096 ns; Loc. = LCCOMB_X21_Y6_N12; Fanout = 1; COMB Node = 'Mux68~11'
+        Info: 4: + IC(1.538 ns) + CELL(0.651 ns) = 7.285 ns; Loc. = LCCOMB_X20_Y6_N4; Fanout = 1; COMB Node = 'Mux68~12'
+        Info: 5: + IC(0.364 ns) + CELL(0.366 ns) = 8.015 ns; Loc. = LCCOMB_X20_Y6_N14; Fanout = 1; COMB Node = 'Mux68~13'
+        Info: 6: + IC(2.316 ns) + CELL(3.216 ns) = 13.547 ns; Loc. = PIN_55; Fanout = 0; PIN Node = 'segment[3]'
+        Info: Total cell delay = 5.479 ns ( 40.44 % )
+        Info: Total interconnect delay = 8.068 ns ( 59.56 % )
+Info: th for register "mem[3][4]" (data pin = "keyboardread0", clock pin = "clk") is -0.521 ns
+    Info: + Longest clock path from clock "clk" to destination register is 7.264 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.100 ns) = 1.100 ns; Loc. = PIN_17; Fanout = 4; CLK Node = 'clk'
+        Info: 2: + IC(1.432 ns) + CELL(0.970 ns) = 3.502 ns; Loc. = LCFF_X9_Y10_N7; Fanout = 2; REG Node = 'hz'
+        Info: 3: + IC(2.265 ns) + CELL(0.000 ns) = 5.767 ns; Loc. = CLKCTRL_G1; Fanout = 115; COMB Node = 'hz~clkctrl'
+        Info: 4: + IC(0.831 ns) + CELL(0.666 ns) = 7.264 ns; Loc. = LCFF_X15_Y3_N27; Fanout = 3; REG Node = 'mem[3][4]'
+        Info: Total cell delay = 2.736 ns ( 37.67 % )
+        Info: Total interconnect delay = 4.528 ns ( 62.33 % )
+    Info: + Micro hold delay of destination is 0.306 ns
+    Info: - Shortest pin to register delay is 8.091 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.954 ns) = 0.954 ns; Loc. = PIN_43; Fanout = 64; PIN Node = 'keyboardread0'
+        Info: 2: + IC(6.823 ns) + CELL(0.206 ns) = 7.983 ns; Loc. = LCCOMB_X15_Y3_N26; Fanout = 1; COMB Node = 'mem[3][4]~11'
+        Info: 3: + IC(0.000 ns) + CELL(0.108 ns) = 8.091 ns; Loc. = LCFF_X15_Y3_N27; Fanout = 3; REG Node = 'mem[3][4]'
+        Info: Total cell delay = 1.268 ns ( 15.67 % )
+        Info: Total interconnect delay = 6.823 ns ( 84.33 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 131 megabytes
+    Info: Processing ended: Tue May 19 18:00:40 2015
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:01
+
+
